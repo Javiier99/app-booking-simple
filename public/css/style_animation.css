@@ -1,1 +1,16 @@
-/* Pondremos los estilos que se requieran de animación */
+/* Aquí realizaremos todas las animaciones */
+@import url(/frontend/css/main.css);
+
+
+@keyframes backgound-surf {
+    0%{
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+    
+}

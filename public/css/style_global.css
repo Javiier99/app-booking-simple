@@ -1,1 +1,183 @@
 /* Todos los estilos globales que tendrá la página web */
+
+@import url(/public/css/main.css);
+
+
+html{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-size: 62.5%;
+}
+
+/* 1 Bloque del fondo */
+body{
+    width: auto;
+    min-height: 100vh;
+    
+    background: linear-gradient(
+        var(--white) 0%,
+        var(--light-green-background) 100%
+    );
+    background-size: 200% 400%;
+    background-attachment: fixed;
+    animation: backgound-surf 12s ease-in-out infinite; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Todos los estilos globales */
+
+:root{ 
+    /* Colores */
+    --white : #fff;
+    --black : #000;
+    --green-selection-button : #2FBDA7;
+    --light-green-background : #c0f1e0;
+
+
+    /* Comprobar si tengo algún uso a los siguientes colores */
+    --light-grey : #B6BEC4;
+    --light-blue :  #D7EFFC;
+    --light-green : #D4F3E8;
+    --color-button-hover: #E2F7F0;
+    --green-dark: #0D4738;
+    --blue-light : #D7EFFC;
+    --blue-dark : #14536D;
+
+    /* Tipografía */ 
+    --font-family : Georgia, 'Times New Roman', Times, serif;
+
+}
+
+
+
+
+
+/* Encabezados */
+
+h1{
+    font-family: var(--font-family);
+    font-size: 3.2rem;
+    margin: 0px;
+    padding: 0px;
+}
+h2{
+    font-family: var(--font-family);
+    font-size: 2.6rem;
+    margin: 0px;
+    padding: 0px;
+}
+h3{
+    font-family: var(--font-family);
+    font-size: 2rem;
+    margin: 0px;
+    padding: 0px;
+}
+h4{
+    font-family: var(--font-family);
+    font-size: 1.8rem;
+    margin: 0px;
+    padding: 0px;
+}
+p{
+    font-family: sans-serif;
+    font-size: 1.6rem;
+    margin: 0px;
+    padding: 0px;
+}
+
+
+
+
+
+
+/* Botones */
+
+button{
+    padding: 0px;
+    margin: 0px;
+    background-color: #00000000;
+    margin: 0px;
+    padding: 0px;
+}
+
+.button{
+    background-color: var(--green-selection-button);
+    padding: 1.5rem 3rem ;
+    border: none;
+    border-radius: 2rem;
+    color: var(--white);
+    font-family: var(--font-family);
+    font-size: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    cursor: pointer;
+}
+
+
+.button:hover {
+    background-color: var(--color-button-hover);
+    color: var(--black);
+    transition: 0.5s;
+}
+
+.button:active{
+    background-color: var(--green-selection-button);
+    color: var(--white);
+}
+
+
+/* Parte de las flechas en los botones */
+
+.img-button-arrow{
+    background-color: var(--white);
+    border-radius: 10rem;
+    padding: 1rem;
+    width: 1.8rem;
+}
+
+.button:hover .img-button-arrow{
+    background-color: var(--green-selection-button);
+    border-radius: 10rem;
+    padding: 1rem;
+    transition: 0.5s;
+}
+
+.img-arrow-white{
+    display: none;
+}
+
+.button:hover .img-arrow-white{
+    display: block;
+}
+.button:hover .img-arrow-black{
+    display: none;
+}
+
+.button:active .img-arrow-black{
+    display: block;
+    background-color: var(--white);
+}
+.button:active .img-arrow-white{
+    display: none;
+}
+
+
+
+/* 1 Para todos los bloques que contengan sombra */
+
+.box-shadow{
+    box-shadow: 0px 2px 4px 0px #00000080;
+    border-radius: 20px;
+}
+
+.hidden{
+    display: none;
+}
+
+

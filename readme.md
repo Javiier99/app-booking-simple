@@ -90,6 +90,8 @@ Para mantener la consistencia en el código, todo el equipo debe respetar los si
 - **Clases e IDs en CSS:** kebab-case.
   Ejemplo: `.btn-reserva`, `#calendar-container`
 
+  Se debe de colocar el nombre de la clase o ID lo que contenga el los hijos, por ejemplo si un div tiene dentro un h2 un p y un div se debe de poner div-h2pdiv de esta manera
+
 ---
 
 ## 🛡️ Reglas de Desarrollo y Buenas Prácticas
