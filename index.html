@@ -4,93 +4,102 @@
 
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sitio de reservas</title>
-    <link rel="stylesheet" href="/public/css/main.css">
-</head>
-<body>
-    <div>
-        <h1>Reserva tu cita</h1>
-        <h2>Estética Mar Delgado</h2>
-        <p>Elige tu tratamiento, dónde quieres recibirlo y el momento perfecto</p>
-    </div>
-    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sitio de reservas</title>
+        <link rel="stylesheet" href="./public/css/main.css">
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" /> -->
+    </head>
+    <body>
+        <div class="body-div-h1h2p">
+            <h1 class="body-div-h1h2p--h1">Reserva tu cita</h1>
+            <h2 class="body-div-h1h2p--h2">Estética Mar Delgado</h2>
+            <p class="body-div-h1h2p--p">Elige tu tratamiento, dónde quieres recibirlo y el momento perfecto</p>
+        </div>
+        
 
-    
-    <form action="">
-        <div class="form-div-">
-            <div>
-                <div>
-                    <label for="name">Nombre</label>
-                    <input id="name" name="name" type="text">
+        
+        <form class="body-form-div box-shadow" action="" method="post">
+            <div class="body-form-div-divx3button ">
+                <div class="form-div-divx3Button-divx4">
+                    <div class="form-div-divx3Button-divx4-labelinput">
+                        <label class="form-div-divx3Button-divx4-labelinput--label" for="name">Nombre</label>
+                        <input class="form-div-divx3Button-divx4-labelinput--input" id="name" name="name" type="text">
+                    </div>
+                    <div class="form-div-divx3Button-divx4-labelinput">
+                        <label class="form-div-divx3Button-divx4-labelinput--label" for="phone">Teléfono</label>
+                        <input class="form-div-divx3Button-divx4-labelinput--input" id="phone" name="phone" type="number">
+                    </div>
+                    <div class="form-div-divx3Button-divx4-labelinput">
+                        <label class="form-div-divx3Button-divx4-labelinput--label" for="email">Email</label>
+                        <input class="form-div-divx3Button-divx4-labelinput--input" id="email" name="email" type="email">
+                    </div>
+                    <div class="form-div-divx3Button-divx4-labelinput">
+                        <label class="form-div-divx3Button-divx4-labelinput--label" for="service">Servicio</label>
+                        <select class="form-div-divx3Button-divx4-labelinput--select" name="service" id="service">
+                            <option value="" disabled selected>Escoje un Servicio</option>
+                            <option name="service1" id="service1" class="form-div-divx3Button-divx4-labelinput--select--opcion" value="Ejemplo1">Ejemplo 1</option>
+                            <option name="service2" id="service2" class="form-div-divx3Button-divx4-labelinput--select--opcion" value="Ejemplo2">Ejemplo 2</option>
+                        </select>
+                    </div>
+                    
                 </div>
-                <div>
-                    <label for="name">Teléfono</label>
-                    <input id="name" name="name" type="text">
+
+                <div class="body-form-div-divx3button-labelDiv">
+                    <label class="body-form-div-divx3button-labelDiv--label" for="localization">Localización</label>
+                    <div class="body-form-div-divx3button-labelDiv-divx2">
+                        <div class="body-form-div-divx3button-labelDiv-divx2-divx2">
+                            <div class="body-form-div-divx3button-labelDiv-divx2-divx2-img">
+                                <img class="body-form-div-divx3button-labelDiv-divx2-divx2-img--img hidden" src="public/img/enterprise-black.png" alt="">
+                                <img class="body-form-div-divx3button-labelDiv-divx2-divx2-img--img" src="public/img/enterprise-white.png" alt="">
+                            </div>
+                            <div class="body-form-div-divx3button-labelDiv-divx2-divx2-h3P">
+                                <h3>En la estética</h3>
+                                <p>Localización o calle</p>
+                            </div>
+                        </div>
+                        <div class="body-form-div-divx3button-labelDiv-divx2-divx2">
+                            <div class="body-form-div-divx3button-labelDiv-divx2-divx2-img">
+                                <img class="body-form-div-divx3button-labelDiv-divx2-divx2-img--img hidden" src="public/img/house-black.png" alt="">
+                                <img class="body-form-div-divx3button-labelDiv-divx2-divx2-img--img " src="public/img/house-white.png" alt="">
+                            </div>
+                            <div class="body-form-div-divx3button-labelDiv-divx2-divx2-h3P">
+                                <h3>En mi casa</h3>
+                                <p>Servicio a domicilio</p>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
+
                 <div>
-                    <label for="name">Email</label>
-                    <input id="name" name="name" type="text">
-                </div>
-                <div>
-                    <label for="service">Servicio</label>
-                    <select name="service" id="service">
-                        <option value="">Ejemplo 1</option>
-                        <option value="">Ejemplo 2</option>
-                    </select>
+                    <div id="calendar">
+                        <!-- Colocamos todo el calendario -->
+                        <label for="fecha-cita">Selecciona tu cita:</label>
+                    </div>
+                    <div>
+                        <!-- Selección de las horas -->
+                        <h2>hoaras</h2>
+                    </div>
                 </div>
                 
+                <button class="button">
+                    Este es un ejemplo de boton 
+                    <img class="img-button-arrow img-arrow-black" src="public/img/flecha-derecha-negra.png" alt=""> 
+                    <img class="img-arrow-white img-button-arrow" src="public/img/flecha-derecha-blanca.png" alt="">
+                </button>
             </div>
-
-            <div>
-                <label for="localization">Localización</label>
-                <div>
-                    <div>
-                        <img src="" alt="">
-                    </div>
-                    <div>
-                        <h3>En la estética</h3>
-                        <p>Localización o calle</p>
-                    </div>
-                </div>
-                <div>
-                    <div>
-                        <img src="" alt="">
-                    </div>
-                    <div>
-                        <h3>En mi casa</h3>
-                        <p>Servicio a domicilio</p>
-                    </div>
-                </div>
-            </div>
-
-            <div>
-                <div>
-                    <!-- Colocamos todo el calendario -->
-                </div>
-                <div>
-                    <!-- Selección de las horas -->
-                </div>
-            </div>
-            
-            <button class="button">
-                Este es un ejemplo de boton 
-                <img class="img-button-arrow img-arrow-black" src="/public/img/flecha-derecha-negra.png" alt=""> 
-                <img class="img-arrow-white img-button-arrow" src="/public/img/flecha-derecha-blanca.png" alt="">
-            </button>
-        </div>
-    </form>
-    
+        </form>
+        
 
 
 
 
 
-    <script src="/public/js/main.js"></script>
+        <script type="module" src="public/js/main.js"></script>
 
-</body>
+    </body>
 </html>
 
 

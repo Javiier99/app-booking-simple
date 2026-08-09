@@ -35,14 +35,16 @@ body{
     --black : #000;
     --green-selection-button : #2FBDA7;
     --light-green-background : #c0f1e0;
-
+    --light-green : #D4F3E8;
+    --light-grey : #B6BEC4;
+    --green-dark: #0D4738;
 
     /* Comprobar si tengo algún uso a los siguientes colores */
-    --light-grey : #B6BEC4;
+    
     --light-blue :  #D7EFFC;
-    --light-green : #D4F3E8;
+
     --color-button-hover: #E2F7F0;
-    --green-dark: #0D4738;
+    
     --blue-light : #D7EFFC;
     --blue-dark : #14536D;
 
@@ -179,5 +181,4 @@ button{
 .hidden{
     display: none;
 }
-
 

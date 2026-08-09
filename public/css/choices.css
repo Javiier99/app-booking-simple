@@ -1,0 +1,57 @@
+
+
+/* El contenedor principal con tus bordes redondeados */
+/* Corrección del contenedor de Choices.js */
+.choices {
+    margin-top: 1rem; /* El mismo margen de tus inputs */
+    width: 100%;
+}
+
+/* Caja principal del select */
+.choices__inner {
+    border-radius: 2rem !important;
+    border: 1px solid var(--light-grey, #ccc) !important;
+    background-color: #ffffff !important;
+    height: 3rem !important;             /* Misma altura que tus inputs */
+    min-height: 3rem !important;
+    padding: 0 1.5rem !important;         /* Espacio interno */
+    display: flex !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+}
+
+/* Texto dentro del select */
+.choices__list--single {
+    padding: 0 !important;
+}
+
+.choices__list--single .choices__item {
+    font-size: 1.8rem !important; /* Ajusta este valor al tamaño de letra de tus otros campos */
+    color: #000000 !important;
+}
+
+/* Quitar la línea inferior que aparece por defecto */
+.choices[data-type*="select-one"] .choices__inner {
+    padding-bottom: 0 !important;
+}
+
+/* Ajustar posición de la flecha */
+.choices[data-type*="select-one"]::after {
+    right: 1.5rem !important;
+    margin-top: -2px !important;
+}
+
+/* ==========================================
+   ESTILO EN HOVER Y FOCUS (Lo que querías)
+========================================== */
+
+/* Borde al hacer clic/abrir */
+.choices.is-focused .choices__inner {
+    border-color: #000000 !important; /* O el color que elegiste para tus inputs en focus */
+}
+
+/* Fondo y texto al pasar el ratón por las opciones desplegadas */
+.choices__list--dropdown .choices__item--selectable.is-highlighted {
+    background-color: #000000 !important; /* Cambia a tu color preferido */
+    color: #ffffff !important;
+}

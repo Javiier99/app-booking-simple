@@ -1,3 +1,6 @@
-@import url(/public/css/style.css);
-@import url(/public/css/style_animation.css);
-@import url(/public/css/style_global.css);
+@import url(./flatpickr.min.css);
+@import url(./style.css);
+@import url(./style_animation.css);
+@import url(./style_global.css);
+@import url(./calendar.css);
+/* @import url(/public/css/choices.css); */
