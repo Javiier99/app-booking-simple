@@ -8,10 +8,8 @@
 
 import "./flatpickr.min.js";
 import "./es.js";
+import {inicializarCalendar} from "./calendar.js";
 
-flatpickr("#calendar", {
-    inline: true,        // Calendario visible en pantalla
-    locale: flatpickr.l10ns.es,     // Asignamos el idioma español importado
-    minDate: "today",    // Bloquear días pasados
-    dateFormat: "d-m-Y", // Formato de fecha
+document.addEventListener("DOMContentLoaded", ()=>{
+    inicializarCalendar();
 })

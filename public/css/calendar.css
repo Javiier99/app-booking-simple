@@ -1,20 +1,48 @@
 /* Toda la edición del calendario se realizará aquí */
-
+@import url(/public/css/main.css);
 
 
 
 .flatpickr-calendar{
-    background-color: aqua;
+    background-color: rgb(251, 255, 255);
+    width: 100%;
+}
+
+.flatpickr-rContainer{
+    width: 100%;
+}
+
+.flatpickr-innerContainer{
+    padding: 20px;
+}
+
+.flatpickr-days, 
+.dayContainer {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
 }
 
 
+.flatpickr-day, 
+.flatpickr-weekday {
+    max-width: none !important;
+    height: 48px !important;       /* Altura de cada casilla de día */
+    line-height: 48px !important;  /* Centra el texto del número */
+}
 
 
+.flatpickr-day.selected, .flatpickr-day.startRange, .flatpickr-day.endRange, .flatpickr-day.selected.inRange, .flatpickr-day.startRange.inRange, .flatpickr-day.endRange.inRange, .flatpickr-day.selected:focus, .flatpickr-day.startRange:focus, .flatpickr-day.endRange:focus, .flatpickr-day.selected:hover, .flatpickr-day.startRange:hover, .flatpickr-day.endRange:hover, .flatpickr-day.selected.prevMonthDay, .flatpickr-day.startRange.prevMonthDay, .flatpickr-day.endRange.prevMonthDay, .flatpickr-day.selected.nextMonthDay, .flatpickr-day.startRange.nextMonthDay, .flatpickr-day.endRange.nextMonthDay{
+    background-color: var(--green-selection-button) !important;
+    border-color: var(--green-selection-button) !important;
+}
 
 
+.flatpickr-day:hover{
+    background-color: var(--light-green-background) !important;
+}
 
-
-
-
-
-
+.flatpickr-months .flatpickr-prev-month:hover svg,.flatpickr-months .flatpickr-next-month:hover svg{
+    fill: var(--green-selection-button);
+    
+}
