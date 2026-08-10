@@ -1,0 +1,119 @@
+<!-- Crearé todo aquí y luego lo llevaré a index.php -->
+
+
+
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sitio de reservas</title>
+        <link rel="stylesheet" href="./css/main.css">
+        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" /> -->
+    </head>
+    <body>
+        <div class="body-div-h1h2p">
+            <h1 class="body-div-h1h2p--h1">Reserva tu cita</h1>
+            <h2 class="body-div-h1h2p--h2">Estética Mar Delgado</h2>
+            <p class="body-div-h1h2p--p">Elige tu tratamiento, dónde quieres recibirlo y el momento perfecto</p>
+        </div>
+        
+
+        
+        <form class="body-form-div box-shadow" action="" method="post">
+            <div class="body-form-div-divx3button ">
+                <div class="form-div-divx3Button-divx4">
+                    <div class="form-div-divx3Button-divx4-labelinput">
+                        <label class="form-div-divx3Button-divx4-labelinput--label" for="name">Nombre</label>
+                        <input class="form-div-divx3Button-divx4-labelinput--input" id="name" name="name" type="text">
+                    </div>
+                    <div class="form-div-divx3Button-divx4-labelinput">
+                        <label class="form-div-divx3Button-divx4-labelinput--label" for="phone">Teléfono</label>
+                        <input class="form-div-divx3Button-divx4-labelinput--input" id="phone" name="phone" type="number">
+                    </div>
+                    <div class="form-div-divx3Button-divx4-labelinput">
+                        <label class="form-div-divx3Button-divx4-labelinput--label" for="email">Email</label>
+                        <input class="form-div-divx3Button-divx4-labelinput--input" id="email" name="email" type="email">
+                    </div>
+                    <div class="form-div-divx3Button-divx4-labelinput">
+                        <label class="form-div-divx3Button-divx4-labelinput--label" for="service">Servicio</label>
+                        <select class="form-div-divx3Button-divx4-labelinput--select" name="service" id="service">
+                            <option value="" disabled selected>Escoje un Servicio</option>
+                            <option name="service1" id="service1" class="form-div-divx3Button-divx4-labelinput--select--opcion" value="Ejemplo1">Ejemplo 1</option>
+                            <option name="service2" id="service2" class="form-div-divx3Button-divx4-labelinput--select--opcion" value="Ejemplo2">Ejemplo 2</option>
+                        </select>
+                    </div>
+                    
+                </div>
+
+                <div class="body-form-div-divx3button-labelDiv">
+                    <label class="body-form-div-divx3button-labelDiv--label" for="localization">Localización</label>
+                    <div class="body-form-div-divx3button-labelDiv-divx2">
+                        <div class="body-form-div-divx3button-labelDiv-divx2-divx2">
+                            <div class="body-form-div-divx3button-labelDiv-divx2-divx2-img">
+                                <img class="body-form-div-divx3button-labelDiv-divx2-divx2-img--img" src="./img/enterprise-white.png" alt="">
+                            </div>
+                            <div class="body-form-div-divx3button-labelDiv-divx2-divx2-h3P">
+                                <h3>En la estética</h3>
+                                <p>Localización o calle</p>
+                            </div>
+                        </div>
+                        <div class="body-form-div-divx3button-labelDiv-divx2-divx2">
+                            <div class="body-form-div-divx3button-labelDiv-divx2-divx2-img">
+                                <img class="body-form-div-divx3button-labelDiv-divx2-divx2-img--img " src="./img/house-white.png" alt="">
+                            </div>
+                            <div class="body-form-div-divx3button-labelDiv-divx2-divx2-h3P">
+                                <h3>En mi casa</h3>
+                                <p>Servicio a domicilio</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <div class="body-form-div-divx2">
+                    <div class="body-form-div-divx2-labelDiv">
+                        <!-- Colocamos todo el calendario -->
+                        <label class="body-form-div-divx2-labelDiv--label" for="fecha-cita">Selecciona tu cita:</label>
+                        <div id="calendar"></div>
+                    </div>
+                    <div class="body-form-div-divx2-h2Div">
+                        <!-- Selección de las horas -->
+                        <label class="body-form-div-divx2-h2Div--label" for="hours">Selecciona tu hora:</label>
+                        <div id="calendar-hours" class="body-form-div-divx2-h2Div-divHours">
+                            <p class="body-form-div-divx2-h2Div-divHours--p">Selecciona una fecha para que aparezcan las horas</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <!-- Aqui pondría todos los datos para que el cliente pueda reservar -->
+                </div>
+
+
+
+                <button class="button">
+                    Este es un ejemplo de boton 
+                    <img class="img-button-arrow img-arrow-black" src="./img/flecha-derecha-negra.png" alt=""> 
+                    <img class="img-arrow-white img-button-arrow" src="./img/flecha-derecha-blanca.png" alt="">
+                </button>
+            </div>
+        </form>
+        
+
+
+
+
+
+        <script type="module" src="./js/main.js"></script>
+
+    </body>
+</html>
+
+
+
+
+
+
+
+
