@@ -2,6 +2,7 @@
 @import url(/public/css/main.css);
 
 
+/* Estilo para el calendario */
 
 .flatpickr-calendar{
     background-color: rgb(251, 255, 255);
@@ -22,7 +23,6 @@
     min-width: 100% !important;
     max-width: 100% !important;
 }
-
 
 .flatpickr-day, 
 .flatpickr-weekday {
@@ -46,3 +46,45 @@
     fill: var(--green-selection-button);
     
 }
+
+
+
+/* Estilos de las horas */
+
+
+.body-form-div-divx2-h2Div-divHours{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: 1rem;
+}
+
+.body-form-div-divx2-h2Div-divHours--p{
+    grid-column: 1 / -1;
+}
+
+.body-form-div-divx2-h2Div-divHours--button{
+    padding: 1rem;
+    background-color: var(--green-selection-button);
+    color: var(--white);
+    border-radius: 2rem;
+    border: 1px var(--green-selection-button) solid;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.body-form-div-divx2-h2Div-divHours--button:hover{
+    background-color: var(--white);
+    color: var(--green-selection-button);
+    border-radius: 2rem;
+    border: 1px var(--green-selection-button) solid;
+}
+
+.button-select{
+    background-color: var(--white) !important;
+    color: var(--green-selection-button) !important;
+    border: 1px var(--green-selection-button) solid !important;
+}
+
+
+
+

@@ -62,8 +62,17 @@ export function inicializarCalendar(){
 }
 
 
+// Para que al pinchar en una hora, se quede como fijado
 
+export function selectedHours(e){
+    
+    if(e.target.matches(".body-form-div-divx2-h2Div-divHours--button")){
+        const button = document.querySelectorAll(".body-form-div-divx2-h2Div-divHours--button");
+        button.forEach((buttons) =>{
+            console.log("G")
+            buttons.classList.remove("button-select");
+        })
 
-
-
-
+        e.target.classList.add("button-select");
+    }
+}

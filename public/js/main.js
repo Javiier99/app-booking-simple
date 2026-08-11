@@ -9,7 +9,10 @@
 import "./flatpickr.min.js";
 import "./es.js";
 import {inicializarCalendar} from "./calendar.js";
+import {selectedHours} from "./calendar.js";
 
 document.addEventListener("DOMContentLoaded", ()=>{
     inicializarCalendar();
 })
+
+document.addEventListener("click", selectedHours);
