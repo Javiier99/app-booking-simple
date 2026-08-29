@@ -36,13 +36,16 @@
                         <input class="form-div-divx3Button-divx4-labelinput--input" id="email" name="email" type="email">
                     </div>
                     <div class="form-div-divx3Button-divx4-labelinput">
-                        <label class="form-div-divx3Button-divx4-labelinput--label" for="service">Servicio</label>
-                        <p>Actualmente solo se podrá escoger un servicio</p>
-                        <select class="form-div-divx3Button-divx4-labelinput--select" name="service" id="service">
+                        <label class="form-div-divx3Button-divx4-labelinput--label" for="service">Servicios</label>
+                        <!-- <select class="form-div-divx3Button-divx4-labelinput--select" name="service" id="service">
                             <option value="" disabled selected>Escoje un Servicio</option>
                             <option name="service1" id="service1" class="form-div-divx3Button-divx4-labelinput--select--opcion" value="Ejemplo1">Ejemplo 1</option>
                             <option name="service2" id="service2" class="form-div-divx3Button-divx4-labelinput--select--opcion" value="Ejemplo2">Ejemplo 2</option>
-                        </select>
+                        </select> -->
+
+                        <div class="form-div-divx3Button-divx4-labelinput-services" id="form-div-divx3Button-divx4-labelinput-services">
+                            
+                        </div>
                     </div>
                     
                 </div>
@@ -99,7 +102,7 @@
                         <p>Fecha y Hora: El día: {día} a las {hora}</p>
                     </div>
                 </div>
-
+                
 
 
                 <button class="button">
@@ -111,7 +114,7 @@
         </form>
         
 
-
+        
 
 
 

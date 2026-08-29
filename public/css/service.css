@@ -1,0 +1,26 @@
+@import url(./main.css);
+
+
+.form-div-divx3Button-divx4-labelinput-services--button{
+    padding: 1rem 2rem;
+    background-color: var(--green-selection-button);
+    color: var(--white);
+    border-radius: 2rem;
+    border: 1px var(--green-selection-button) solid;
+    transition: 0.5s;
+    cursor: pointer;
+    white-space: nowrap;
+    text-align: start;
+
+}
+
+.form-div-divx3Button-divx4-labelinput-services--button:hover{
+    background-color: var(--white);
+    color: var(--green-selection-button);
+    border-radius: 2rem;
+    border: 1px var(--green-selection-button) solid;
+}
+
+.gola{
+    background-color: red;
+}

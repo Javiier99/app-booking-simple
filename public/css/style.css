@@ -70,7 +70,7 @@ body{
     margin-bottom: 1rem;
 }
 
-.form-div-divx3Button-divx4-labelinput--input, .form-div-divx3Button-divx4-labelinput--select{
+.form-div-divx3Button-divx4-labelinput--input{
     width: 100%;
     height: 3rem;
     border: var(--light-grey) solid 1px;
@@ -84,6 +84,15 @@ body{
 .form-div-divx3Button-divx4-labelinput--select{
     cursor: pointer;
 }
+
+.form-div-divx3Button-divx4-labelinput-services{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+/* Los botones relacionados a los distintos servicios se han colocado en un css llamado service.css */
+
 
 /* 2 Localización */
 

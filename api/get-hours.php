@@ -10,7 +10,7 @@ require_once __DIR__ . "/../config/database.php";
 
 
 try{
-    $sql = "SELECT id, hora FROM horarios_disponibles WHERE activo = 1 ORDER BY  hora ASC";
+    $sql = "SELECT id_hours_available, hora FROM horarios_disponibles WHERE activo = 1 ORDER BY  hora ASC";
 
     $stmt = $pdo-> prepare($sql);
     $stmt-> execute();
