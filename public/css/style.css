@@ -120,7 +120,6 @@ body{
 
 .body-form-div-divx3button-labelDiv-divx2-divx2{
     width: 50%;
-    border: var(--green-dark) 1px solid;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -129,6 +128,7 @@ body{
     cursor: pointer;
     border-radius: 2rem;
     border: 1px solid var(--light-grey);
+    background-color: rgba(255, 0, 0, 0);
     
 }
 
@@ -148,7 +148,7 @@ body{
 }
 
 .body-form-div-divx3button-labelDiv-divx2-divx2:hover .body-form-div-divx3button-labelDiv-divx2-divx2-img{
-    background-color: var(--green-dark);
+    background-color: var(--green-selection-button);
     transition: 0.5s;
 }
 
@@ -156,6 +156,9 @@ body{
     width: 3rem;
 }
 
+.body-form-div-divx3button-labelDiv-divx2-divx2-h3P h3{
+    text-align: start;
+}
 
 /* 2 Calendar */
 /* La edición del calendario mismo se encuentra en el css calendar.css */

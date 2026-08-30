@@ -1,0 +1,1 @@
+Vamos a preparar esta parte para las automatizaciones correspondientes relacionados a el envío de email y si es posible el envio de mensaje de testo o de whatsapp

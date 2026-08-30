@@ -24,9 +24,10 @@ export function obtenerServicios(){
                     const button = document.createElement("button");
                     button.type = 'button';
                     button.classList.add("form-div-divx3Button-divx4-labelinput-services--button");
-                    button.name = element.service_id;
+                    button.name = "service-select";
+                    button.value = element.service_id;
                     button.id = element.service_id;
-                    button.innerHTML = `<p>${element.service_name} ➨ ${element.precio}€</p>`;
+                    button.innerHTML = `${element.service_name} ➨ ${element.precio}€`;
                     contenedor.appendChild(button);
                     
                 });
@@ -39,22 +40,50 @@ export function obtenerServicios(){
 })}
 
 
+export function selectedService(event){
 
+    const button = event.target;
+    const buttonsNoSelect = "form-div-divx3Button-divx4-labelinput-services--button";
+    const buttonsSelect = "form-div-divx3Button-divx4-labelinput-services--button__active";
 
-// ! No funciona la función de seleccionar el evento, por lo tanto toca corregirlo, basicamente no selecciona bien, es importante tambíen tener en cuenta que la función debe de poder seleccionar y deseleccionar sin problema eso se hará con un if, en caso de que por ejemplo esté activado se llamará true, si está true y el cliente lo vuelve a pulsar se pasará a llamar false y al revés si es false y así se selecciona los elementos
+    const buttonSelectService = document.querySelectorAll('button[name="service-select"]');
+    const inputSelectService = document.getElementById('service-select');
 
-// ! Otra cuestión a arreglar es colocar el mismo name a los botones pero distintos value para que así podamos recoger todos los datos relacionado a los usuarios
-
-
-export function selectedService(e){
-    if(e.target.matches(".form-div-divx3Button-divx4-labelinput-services--button")){
-        const buttonSelect = document.querySelectorAll("form-div-divx3Button-divx4-labelinput-services--button");
-        buttonSelect.forEach((buttons) =>{
-            buttonSelect.classList.remove("form-div-divx3Button-divx4-labelinput-services--button")
-            
-        })
-        
-        e.classList.add("gola");
+    if (!button || button.name !== "service-select") {
+        return;
     }
-    console.log("Funciona")
+    
+    if(button.classList.contains(buttonsNoSelect) || button.classList.contains(buttonsSelect)){
+        button.classList.toggle(buttonsSelect);
+        button.classList.toggle(buttonsNoSelect);
+    }
+
+    
+    const inputService = document.querySelector(`input[name="service-select[]"][data-service="${button.value}"]`);
+
+    if(inputService){
+        inputService.remove();
+    }else{
+        const input = document.createElement("input");
+
+        input.type = "hidden";
+        input.name = "service-select[]";
+        input.value = button.value;
+        input.dataset.service = button.value;
+
+        document.querySelector("form").appendChild(input);
+
+        
+    }
+    console.log(
+    "selectedService:",
+    event.target.name,
+    event.target.value
+);
+
 }
+
+
+
+
+

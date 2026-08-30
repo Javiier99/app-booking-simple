@@ -10,13 +10,20 @@ import "./flatpickr.min.js";
 import "./es.js";
 import {inicializarCalendar} from "./calendar.js";
 import {selectedHours} from "./calendar.js";
+import {saveInputHourDate} from "./calendar.js";
 import {obtenerServicios} from "./services.js";
 import {selectedService} from "./services.js";
+import {localization} from "./localizations.js";
+
 
 document.addEventListener("DOMContentLoaded", ()=>{
     inicializarCalendar();
     obtenerServicios();
+    localization();
+    // saveInputHourDate();
 })
 
 document.addEventListener("click", selectedHours);
 document.addEventListener("click", selectedService);
+document.addEventListener("click", saveInputHourDate);
+

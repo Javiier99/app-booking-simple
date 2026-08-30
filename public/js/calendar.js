@@ -16,6 +16,7 @@ export function inicializarCalendar(){
     
         onChange: function(selectedDates, dateStr){
             if(dateStr){
+                fechaSeleccionada = dateStr;
                 obtenerHoras(dateStr)
             }
         }
@@ -73,5 +74,19 @@ export function selectedHours(e){
         })
 
         e.target.classList.add("button-select");
+        horaSeleccionada = e.target.textContent
     }
+}
+
+
+
+export function saveInputHourDate(){
+    const inputHourSelect = document.getElementById('date');
+    const inputDateSelect = document.getElementById('time');
+
+
+    inputDateSelect.value = fechaSeleccionada;
+    inputHourSelect.value = horaSeleccionada;
+
+
 }

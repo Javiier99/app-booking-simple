@@ -46,6 +46,7 @@
                         <div class="form-div-divx3Button-divx4-labelinput-services" id="form-div-divx3Button-divx4-labelinput-services">
                             
                         </div>
+                        
                     </div>
                     
                 </div>
@@ -53,7 +54,7 @@
                 <div class="body-form-div-divx3button-labelDiv">
                     <label class="body-form-div-divx3button-labelDiv--label" for="localization">Localización</label>
                     <div class="body-form-div-divx3button-labelDiv-divx2">
-                        <div class="body-form-div-divx3button-labelDiv-divx2-divx2">
+                        <button class="body-form-div-divx3button-labelDiv-divx2-divx2" name="place_cite" value="business" type="button">
                             <div class="body-form-div-divx3button-labelDiv-divx2-divx2-img">
                                 <img class="body-form-div-divx3button-labelDiv-divx2-divx2-img--img" src="./img/enterprise-white.png" alt="">
                             </div>
@@ -61,8 +62,8 @@
                                 <h3>En la estética</h3>
                                 <p>Localización o calle</p>
                             </div>
-                        </div>
-                        <div class="body-form-div-divx3button-labelDiv-divx2-divx2">
+                        </button>
+                        <button class="body-form-div-divx3button-labelDiv-divx2-divx2" name="place_cite" value="house_client" type="button">
                             <div class="body-form-div-divx3button-labelDiv-divx2-divx2-img">
                                 <img class="body-form-div-divx3button-labelDiv-divx2-divx2-img--img " src="./img/house-white.png" alt="">
                             </div>
@@ -70,7 +71,7 @@
                                 <h3>En mi casa</h3>
                                 <p>Servicio a domicilio</p>
                             </div>
-                        </div>
+                        </button>
                     </div>
                     
                 </div>
@@ -106,11 +107,14 @@
 
 
                 <button class="button">
-                    Este es un ejemplo de boton 
+                    Enviar Formulario
                     <img class="img-button-arrow img-arrow-black" src="./img/flecha-derecha-negra.png" alt=""> 
                     <img class="img-arrow-white img-button-arrow" src="./img/flecha-derecha-blanca.png" alt="">
                 </button>
             </div>
+            <input type="hidden" name="place_cite" id="place_cite">
+            <input type="hidden" name="date" id="date">
+            <input type="hidden" name="time" id="time">
         </form>
         
 
