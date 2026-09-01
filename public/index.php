@@ -21,7 +21,7 @@
 
         
         <form class="body-form-div box-shadow" action="" method="post">
-            <div class="body-form-div-divx3button ">
+            <div class="body-form-div-divx3button">
                 <div class="form-div-divx3Button-divx4">
                     <div class="form-div-divx3Button-divx4-labelinput">
                         <label class="form-div-divx3Button-divx4-labelinput--label" for="name">Nombre</label>
@@ -37,12 +37,6 @@
                     </div>
                     <div class="form-div-divx3Button-divx4-labelinput">
                         <label class="form-div-divx3Button-divx4-labelinput--label" for="service">Servicios</label>
-                        <!-- <select class="form-div-divx3Button-divx4-labelinput--select" name="service" id="service">
-                            <option value="" disabled selected>Escoje un Servicio</option>
-                            <option name="service1" id="service1" class="form-div-divx3Button-divx4-labelinput--select--opcion" value="Ejemplo1">Ejemplo 1</option>
-                            <option name="service2" id="service2" class="form-div-divx3Button-divx4-labelinput--select--opcion" value="Ejemplo2">Ejemplo 2</option>
-                        </select> -->
-
                         <div class="form-div-divx3Button-divx4-labelinput-services" id="form-div-divx3Button-divx4-labelinput-services">
                             
                         </div>
@@ -92,15 +86,15 @@
                 </div>
                 
                 <!-- Esta sección va a aparecer cuando el usuario coloque algún nombre -->
-                <div>
-                    <h2>Datos del {cliente}</h2> <!-- La idea es que el usuario al rellenar su nombre, aparezca justo en esa zona -->
+                <div class="body-form-div-divx3button-h2div box-shadow">
+                    <h2 class="body-form-div-divx3button-h2div--h2">Datos del {cliente}</h2> <!-- La idea es que el usuario al rellenar su nombre, aparezca justo en esa zona -->
                     <div>
-                        <p>Nombre: {nombre}</p>
-                        <p>Teléfono: {teléfono}</p>
-                        <p>Email: {Email}</p>
-                        <p>Servicio: {Servicio}</p>
-                        <p>Localización: {Localización}</p>
-                        <p>Fecha y Hora: El día: {día} a las {hora}</p>
+                        <p>- Nombre: {nombre}</p>
+                        <p>- Teléfono: {teléfono}</p>
+                        <p>- Email: {Email}</p>
+                        <p>- Servicio: {Servicio}</p>
+                        <p>- Localización: {Localización}</p>
+                        <p>- Fecha y Hora: El día: {día} a las {hora}</p>
                     </div>
                 </div>
                 

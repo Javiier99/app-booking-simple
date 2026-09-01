@@ -84,7 +84,6 @@ export function saveInputHourDate(){
     const inputHourSelect = document.getElementById('date');
     const inputDateSelect = document.getElementById('time');
 
-
     inputDateSelect.value = fechaSeleccionada;
     inputHourSelect.value = horaSeleccionada;
 

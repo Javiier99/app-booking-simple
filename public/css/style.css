@@ -118,7 +118,7 @@ body{
 
 
 
-.body-form-div-divx3button-labelDiv-divx2-divx2{
+.body-form-div-divx3button-labelDiv-divx2-divx2, .body-form-div-divx3button-labelDiv-divx2-divx2__active{
     width: 50%;
     display: flex;
     flex-direction: row;
@@ -128,9 +128,17 @@ body{
     cursor: pointer;
     border-radius: 2rem;
     border: 1px solid var(--light-grey);
+    
+}
+.body-form-div-divx3button-labelDiv-divx2-divx2{
     background-color: rgba(255, 0, 0, 0);
     
 }
+
+.body-form-div-divx3button-labelDiv-divx2-divx2__active{
+    background-color: var(--light-green);
+}
+
 
 .body-form-div-divx3button-labelDiv-divx2-divx2:hover{
     background-color: var(--light-green);
@@ -138,9 +146,6 @@ body{
     border: 1px solid var(--green-dark);
 }
 
-.body-form-div-divx3button-labelDiv-divx2-divx2__active{
-    background-color: red;
-}
 
 .body-form-div-divx3button-labelDiv-divx2-divx2-img{
     border-radius: 100%;
@@ -149,6 +154,10 @@ body{
     width: 3rem;
     height: 3rem;
     background-color: var(--light-grey);
+}
+
+.body-form-div-divx3button-labelDiv-divx2-divx2__active .body-form-div-divx3button-labelDiv-divx2-divx2-img{
+    background-color: var(--green-selection-button);
 }
 
 .body-form-div-divx3button-labelDiv-divx2-divx2:hover .body-form-div-divx3button-labelDiv-divx2-divx2-img{
@@ -190,9 +199,20 @@ body{
 
 
 
+/* Datos del cliente */
 
 
+.body-form-div-divx3button-h2div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 5rem;
+    padding: 2rem;
+}
 
+.body-form-div-divx3button-h2div--h2{
+    text-align: center;
+}
 
 
 
