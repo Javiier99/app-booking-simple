@@ -14,16 +14,23 @@ import {saveInputHourDate} from "./calendar.js";
 import {obtenerServicios} from "./services.js";
 import {selectedService} from "./services.js";
 import {localization} from "./localizations.js";
+import {localizationActive} from "./localizations.js";
 
 
 document.addEventListener("DOMContentLoaded", ()=>{
     inicializarCalendar();
     obtenerServicios();
     localization();
-    // saveInputHourDate();
 })
 
 document.addEventListener("click", selectedHours);
 document.addEventListener("click", selectedService);
 document.addEventListener("click", saveInputHourDate);
+
+const buttonsPlaceCite = document.querySelectorAll(
+    'button[name="place_cite"]'
+);
+buttonsPlaceCite.forEach(button => {
+    button.addEventListener("click", localizationActive);
+});
 

@@ -138,6 +138,10 @@ body{
     border: 1px solid var(--green-dark);
 }
 
+.body-form-div-divx3button-labelDiv-divx2-divx2__active{
+    background-color: red;
+}
+
 .body-form-div-divx3button-labelDiv-divx2-divx2-img{
     border-radius: 100%;
     border: none;
