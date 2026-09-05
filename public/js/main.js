@@ -8,14 +8,10 @@
 
 import "./flatpickr.min.js";
 import "./es.js";
-import {inicializarCalendar} from "./calendar.js";
-import {selectedHours} from "./calendar.js";
-import {saveInputHourDate} from "./calendar.js";
-import {obtenerServicios} from "./services.js";
-import {selectedService} from "./services.js";
-import {localization} from "./localizations.js";
-import {localizationActive} from "./localizations.js";
-import {dataClientName} from "./data_client_public.js";
+import {inicializarCalendar, selectedHours, saveInputHourDate} from "./calendar.js";
+import {obtenerServicios, selectedService} from "./services.js";
+import {localization, localizationActive} from "./localizations.js";
+import {dataClientName, dataClientPhone, dataClientEmail, dataClientService, dataClientDateTime, dataClientLocalization, verificationEnd} from "./data_client_public.js";
 
 
 document.addEventListener("DOMContentLoaded", ()=>{
@@ -41,11 +37,68 @@ buttonsPlaceCite.forEach(button => {
 
 
 
-// Código para poder colocar el nombre en datos del cliente
 
-const inputName = document.querySelectorAll('#name')
+
+// * Todo el código para extraer todos los datos que el cliente esté colocando
+// Nombre
+const inputName = document.querySelectorAll('#name');
 
 inputName.forEach(inputName => {
-    inputName.addEventListener("click", dataClientName);
+    inputName.addEventListener("input", dataClientName);
 })
+
+
+
+// Código para el teléfono
+
+const inputPhone = document.querySelectorAll("#phone");
+
+inputPhone.forEach(inputPhone =>{
+    inputPhone.addEventListener("input", dataClientPhone);
+})
+
+
+
+// Código para el email
+
+const inputEmail = document.querySelectorAll("#email");
+
+inputEmail.forEach(inputEmail =>{
+    inputEmail.addEventListener("input", dataClientEmail);
+})
+
+
+
+// Código para el servicio
+
+
+const tapAnywhere = document.querySelector('html');
+tapAnywhere.addEventListener("click", dataClientService);
+
+
+// Localización
+
+tapAnywhere.addEventListener("click", dataClientLocalization);
+
+
+// Para el dia y hora
+
+tapAnywhere.addEventListener("click", dataClientDateTime);
+
+
+// Comprobación antes de enviar todo el formulario
+
+const buttonSubmit = document.getElementById('form');
+let verificationOK = false;
+buttonSubmit.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    let verification = verificationEnd();
+    
+    if(verification == true){
+        verificationOK = true;
+    }
+});
+
+
+
 

@@ -68,18 +68,13 @@ export function selectedService(event){
 
         input.type = "hidden";
         input.name = "service-select[]";
+        input.classList = 'button-pulsado';
         input.value = button.value;
+        input.id = "service";
         input.dataset.service = button.value;
 
         document.querySelector("form").appendChild(input);
-
-        
     }
-    console.log(
-    "selectedService:",
-    event.target.name,
-    event.target.value
-);
 
 }
 

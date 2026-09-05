@@ -20,26 +20,30 @@
         
 
         
-        <form class="body-form-div box-shadow" action="" method="post">
+        <form class="body-form-div box-shadow" action="" method="post" id="form">
             <div class="body-form-div-divx3button">
                 <div class="form-div-divx3Button-divx4">
                     <div class="form-div-divx3Button-divx4-labelinput">
                         <label class="form-div-divx3Button-divx4-labelinput--label" for="name">Nombre</label>
                         <input class="form-div-divx3Button-divx4-labelinput--input" id="name" name="name" type="text">
+                        <span id="name-error"></span>
                     </div>
                     <div class="form-div-divx3Button-divx4-labelinput">
                         <label class="form-div-divx3Button-divx4-labelinput--label" for="phone">Teléfono</label>
                         <input class="form-div-divx3Button-divx4-labelinput--input" id="phone" name="phone" type="number">
+                        <span id="phone-error"></span>
                     </div>
                     <div class="form-div-divx3Button-divx4-labelinput">
                         <label class="form-div-divx3Button-divx4-labelinput--label" for="email">Email</label>
                         <input class="form-div-divx3Button-divx4-labelinput--input" id="email" name="email" type="email">
+                        <span id="email-error"></span>
                     </div>
                     <div class="form-div-divx3Button-divx4-labelinput">
                         <label class="form-div-divx3Button-divx4-labelinput--label" for="service">Servicios</label>
                         <div class="form-div-divx3Button-divx4-labelinput-services" id="form-div-divx3Button-divx4-labelinput-services">
                             
                         </div>
+                        <span id="service-error"></span>
                         
                     </div>
                     
@@ -86,9 +90,9 @@
                 </div>
                 
                 <!-- Esta sección va a aparecer cuando el usuario coloque algún nombre -->
-                <div class="body-form-div-divx3button-h2div box-shadow">
-                    <h2 class="body-form-div-divx3button-h2div--h2">Datos del {cliente}</h2> <!-- La idea es que el usuario al rellenar su nombre, aparezca justo en esa zona -->
-                    <div>
+                <!-- <div class="body-form-div-divx3button-h2div box-shadow"> -->
+                    <!-- <h2 class="body-form-div-divx3button-h2div--h2">Datos del {cliente}</h2> La idea es que el usuario al rellenar su nombre, aparezca justo en esa zona -->
+                    <!-- <div>
                         <p>- Nombre: {nombre}</p>
                         <p>- Teléfono: {teléfono}</p>
                         <p>- Email: {Email}</p>
@@ -96,12 +100,11 @@
                         <p>- Localización: {Localización}</p>
                         <p>- Fecha y Hora: El día: {día} a las {hora}</p>
                     </div>
-                </div>
-                
+                </div>-->
 
 
-                <button class="button">
-                    Enviar Formulario
+                <button class="button" type="submit">
+                    Comprobar datos antes de enviar
                     <img class="img-button-arrow img-arrow-black" src="./img/flecha-derecha-negra.png" alt=""> 
                     <img class="img-arrow-white img-button-arrow" src="./img/flecha-derecha-blanca.png" alt="">
                 </button>
