@@ -87,4 +87,17 @@
 
 
 
+.body-form-div-divx2-h2Div-divHours--button__busy-hours{
+    padding: 1rem;
+    background-color: red;
+    color: var(--white);
+    border-radius: 2rem;
+    border: 1px var(--green-selection-button) solid;
+    transition: 0.5s;
+    cursor: pointer;
+}
 
+
+.texto-horas-no-disponible{
+    grid-column: 1 / -1;
+}

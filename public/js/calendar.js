@@ -8,6 +8,7 @@ let fechaSeleccionada = null;
 
 
 export function inicializarCalendar(){
+    let fechaObjeto = "";
     flatpickr("#calendar", {
         inline: true,        // Calendario visible en pantalla
         locale: flatpickr.l10ns.es,     // Asignamos el idioma español importado
@@ -15,16 +16,26 @@ export function inicializarCalendar(){
         dateFormat: "d-m-Y", // Formato de fecha
     
         onChange: function(selectedDates, dateStr){
-            if(dateStr){
+            if(selectedDates.length > 0){
                 fechaSeleccionada = dateStr;
-                obtenerHoras(dateStr)
+                
+
+
+                let objetoFecha = selectedDates[0];
+                let day = String(objetoFecha.getDate()).padStart(2,'0');
+                let month = String(objetoFecha.getMonth() + 1).padStart(2,'0');
+                let years = objetoFecha.getFullYear();
+                
+
+                fechaObjeto = `${years}-${month}-${day}`
+                obtenerHoras(dateStr, fechaObjeto);
             }
         }
     })
 
-    function obtenerHoras(fecha){
+    function obtenerHoras(fecha, fechaObjeto){
         const contenedor = document.getElementById("calendar-hours");
-        contenedor.innerHTML = `Por favor espere un momento, cargando horas`;
+        contenedor.innerHTML = `<p>Por favor espere un momento, cargando horas</p>`;
 
         fetch('../api/get-hours.php')
             .then(response => {
@@ -34,30 +45,79 @@ export function inicializarCalendar(){
                 return response.json()
             })
             .then(horas =>{
-                pintarHoras(horas);
+                pintarHoras(horas, fechaObjeto);
             })
             .catch(error =>{
                 console.error(`El error al traer las horas ${error}`);
                 contenedor.innerHTML = `<p>Error al cargar las horas</p>`;
             })
     }
+
+
+    // Saber el dia que ha escogido el cliente
+
+
+
     
-    function pintarHoras(listaHoras){
+    function pintarHoras(listaHoras, fechaObjeto){
         const contenedor = document.getElementById("calendar-hours");
         contenedor.innerHTML = "";
+        
+
+        let dateToday = new Date()
+        let dayToday = String(dateToday.getDate()).padStart(2,'0');
+        let monthToday = String(dateToday.getMonth() + 1).padStart(2,'0');
+        let yearsToday = dateToday.getFullYear();
+        let objectDateToday = `${yearsToday}-${monthToday}-${dayToday}`; 
+        let objectDateTodayBool = false;
 
 
-        if(!listaHoras || listaHoras.length === 0){
-            contenedor.innerHTML = `No hay horas disponibles`;
+        if(objectDateToday == fechaObjeto){
+            objectDateTodayBool = true;
+        }
+        if( objectDateTodayBool == true){
+            contenedor.innerHTML = `<p class = "texto-horas-no-disponible">En el mismo día de hoy no se puede coger cita, disculpa las molestias</p>`;
+            return;
         }
 
-        listaHoras.forEach(element => {
-            const button = document.createElement('button');
-            button.type = 'button';
-            button.classList.add('body-form-div-divx2-h2Div-divHours--button');
-            button.textContent = element.hora;
-            contenedor.appendChild(button);
-        });
+        
+        let saveHoursId = [];
+        let saveHours = [];
+        listaHoras[1].forEach(dataClient =>{
+            if(dataClient['fecha'] == fechaObjeto){
+                saveHoursId.push(dataClient['id_hours_available']);
+                saveHours.push(dataClient['hora']);
+            }
+        })  
+
+        if(saveHoursId.length !== 0){
+
+            listaHoras[0].forEach(hoursWrite =>{
+
+                if(!saveHoursId.includes(hoursWrite['id_hours_available'])){
+                    const button = document.createElement('button');
+                    button.type = 'button';
+                    button.classList.add('body-form-div-divx2-h2Div-divHours--button');
+                    button.textContent = hoursWrite.hora;
+                    contenedor.appendChild(button);
+                }
+            })
+
+            
+
+
+
+        }else{
+            listaHoras[0].forEach(element => {
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.classList.add('body-form-div-divx2-h2Div-divHours--button');
+                button.textContent = element.hora;
+                contenedor.appendChild(button);
+            });
+        }
+
+
     }
 
 }
