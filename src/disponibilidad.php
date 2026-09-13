@@ -1,1 +1,0 @@
-<!-- Saber si la disponibilidad de una cita es correcta  -->

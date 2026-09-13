@@ -2,7 +2,6 @@
 
 body{
     width: 100%;
-    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,6 +27,7 @@ body{
     border: none;
     border-radius: 2rem;
     padding: 1.5rem;
+    margin-bottom: 1.5rem;
     width: 70%;
     display: flex;
     flex-direction: column;
@@ -201,19 +201,67 @@ body{
 
 /* Datos del cliente */
 
+.body-form-div-divx3button-h2div--dark{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999; /* Aumentado para superar cualquier otro elemento */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: auto !important;
+    transition: opacity 0.3s ease;
+}
 
 .body-form-div-divx3button-h2div{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin-bottom: 5rem;
     padding: 2rem;
+    width: 80%;
+    gap: 20px;
+    
+    z-index: 9999;
+    background-color: var(--white);
+    pointer-events: auto !important;
 }
 
 .body-form-div-divx3button-h2div--h2{
     text-align: center;
 }
 
+.body-form-div-divx3button-h2div-Px6{
+    padding-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+}
+
+.body-form-div-divx3button-h2div-Px6--p__price{
+    grid-column: 1 / -1;
+}
+
+.body-form-div-divx3button-h2div-Px6 p{
+    text-align: center;
+}
 
 
+.body-form-div-divx3button-h2div--p{
+    color: red;
+    cursor: pointer;
+    font-weight: 900;
+}
 
+.body-form-div-divx3button-h2div--p__faltan-cosas{
+    font-weight: 900;
+    color: red;
+}

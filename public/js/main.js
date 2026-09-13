@@ -12,7 +12,8 @@ import {inicializarCalendar, selectedHours, saveInputHourDate} from "./calendar.
 import {obtenerServicios, selectedService} from "./services.js";
 import {localization, localizationActive} from "./localizations.js";
 import {dataClientName, dataClientPhone, dataClientEmail, dataClientService, dataClientDateTime, dataClientLocalization, verificationEnd} from "./data_client_public.js";
-
+import {startPopup, closePopup} from "./popup.js";
+import {sendForm} from "./form-send.js";
 
 document.addEventListener("DOMContentLoaded", ()=>{
     inicializarCalendar();
@@ -32,7 +33,6 @@ const buttonsPlaceCite = document.querySelectorAll(
 buttonsPlaceCite.forEach(button => {
     button.addEventListener("click", localizationActive);
 });
-
 
 
 
@@ -86,18 +86,46 @@ tapAnywhere.addEventListener("click", dataClientLocalization);
 tapAnywhere.addEventListener("click", dataClientDateTime);
 
 
-// Comprobación antes de enviar todo el formulario
+// * Código relacionado al popup
+
+
+const buttonPopup = document.querySelector(".button-popup");
+let verificationOK = false;
+buttonPopup.addEventListener("click", (e)=>{
+
+    // * Código para el popup
+    startPopup()
+});
+
+const closeWindow = document.querySelector(".body-form-div-divx3button-h2div--p");
+closeWindow.addEventListener("click",()=>{
+    closePopup();
+})
+
+
+
 
 const buttonSubmit = document.getElementById('form');
-let verificationOK = false;
-buttonSubmit.addEventListener("submit", (e)=>{
-    e.preventDefault();
+buttonSubmit.addEventListener("submit", async (e)=>{
     let verification = verificationEnd();
-    
-    if(verification == true){
-        verificationOK = true;
+    const parrafFaltanCosas = document.querySelector(".body-form-div-divx3button-h2div--p__faltan-cosas");
+    if(!verification){
+        e.preventDefault();
+        parrafFaltanCosas.innerHTML = "Hay algunos campos que no se han rellenado correctamente";
+    }else{
+        const resultado =  await sendForm(buttonSubmit);
+        if(resultado.success){
+            window.location.href = "page-thank.php";
+        }else{
+            parrafFaltanCosas.innerHTML = "Error al guardar, intentalo en 5min o enviame un whatsApp al: ";
+        }
     }
+    
+
+
 });
+
+
 
 
 

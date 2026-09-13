@@ -20,7 +20,7 @@
         
 
         
-        <form class="body-form-div box-shadow" action="" method="post" id="form">
+        <form class="body-form-div box-shadow" action="../src/get-client-form.php" method="POST" id="form">
             <div class="body-form-div-divx3button">
                 <div class="form-div-divx3Button-divx4">
                     <div class="form-div-divx3Button-divx4-labelinput">
@@ -49,30 +49,7 @@
                     
                 </div>
 
-                <div class="body-form-div-divx3button-labelDiv">
-                    <label class="body-form-div-divx3button-labelDiv--label" for="localization">Localización</label>
-                    <div class="body-form-div-divx3button-labelDiv-divx2">
-                        <button class="body-form-div-divx3button-labelDiv-divx2-divx2" name="place_cite" value="business" type="button">
-                            <div class="body-form-div-divx3button-labelDiv-divx2-divx2-img">
-                                <img class="body-form-div-divx3button-labelDiv-divx2-divx2-img--img" src="./img/enterprise-white.png" alt="">
-                            </div>
-                            <div class="body-form-div-divx3button-labelDiv-divx2-divx2-h3P">
-                                <h3>En la estética</h3>
-                                <p>Localización o calle</p>
-                            </div>
-                        </button>
-                        <button class="body-form-div-divx3button-labelDiv-divx2-divx2" name="place_cite" value="house_client" type="button">
-                            <div class="body-form-div-divx3button-labelDiv-divx2-divx2-img">
-                                <img class="body-form-div-divx3button-labelDiv-divx2-divx2-img--img " src="./img/house-white.png" alt="">
-                            </div>
-                            <div class="body-form-div-divx3button-labelDiv-divx2-divx2-h3P">
-                                <h3>En mi casa</h3>
-                                <p>Servicio a domicilio</p>
-                            </div>
-                        </button>
-                    </div>
-                    
-                </div>
+                
 
                 <div class="body-form-div-divx2">
                     <div class="body-form-div-divx2-labelDiv">
@@ -88,36 +65,73 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Esta sección va a aparecer cuando el usuario coloque algún nombre -->
-                <!-- <div class="body-form-div-divx3button-h2div box-shadow"> -->
-                    <!-- <h2 class="body-form-div-divx3button-h2div--h2">Datos del {cliente}</h2> La idea es que el usuario al rellenar su nombre, aparezca justo en esa zona -->
-                    <!-- <div>
-                        <p>- Nombre: {nombre}</p>
-                        <p>- Teléfono: {teléfono}</p>
-                        <p>- Email: {Email}</p>
-                        <p>- Servicio: {Servicio}</p>
-                        <p>- Localización: {Localización}</p>
-                        <p>- Fecha y Hora: El día: {día} a las {hora}</p>
+
+                <div class="body-form-div-divx3button-labelDiv">
+                    <label class="body-form-div-divx3button-labelDiv--label" for="localization">Localización</label>
+                    <div class="body-form-div-divx3button-labelDiv-divx2">
+                        <button class="body-form-div-divx3button-labelDiv-divx2-divx2" name="place_cite" value="Negocio" type="button">
+                            <div class="body-form-div-divx3button-labelDiv-divx2-divx2-img">
+                                <img class="body-form-div-divx3button-labelDiv-divx2-divx2-img--img" src="./img/enterprise-white.png" alt="">
+                            </div>
+                            <div class="body-form-div-divx3button-labelDiv-divx2-divx2-h3P">
+                                <h3>En la estética</h3>
+                                <p>Localización o calle</p>
+                            </div>
+                        </button>
+                        <button class="body-form-div-divx3button-labelDiv-divx2-divx2" name="place_cite" value="En tu casa" type="button">
+                            <div class="body-form-div-divx3button-labelDiv-divx2-divx2-img">
+                                <img class="body-form-div-divx3button-labelDiv-divx2-divx2-img--img " src="./img/house-white.png" alt="">
+                            </div>
+                            <div class="body-form-div-divx3button-labelDiv-divx2-divx2-h3P">
+                                <h3>En mi casa</h3>
+                                <p>Servicio a domicilio</p>
+                            </div>
+                        </button>
                     </div>
-                </div>-->
+                    
+                </div>
 
-
-                <button class="button" type="submit">
+                <button class="button button-popup" type="button">
                     Comprobar datos antes de enviar
                     <img class="img-button-arrow img-arrow-black" src="./img/flecha-derecha-negra.png" alt=""> 
                     <img class="img-arrow-white img-button-arrow" src="./img/flecha-derecha-blanca.png" alt="">
                 </button>
             </div>
-            <input type="hidden" name="place_cite" id="place_cite">
+            <input type="hidden" name="place_cite_send" id="place_cite" data-place="place_cite">
             <input type="hidden" name="date" id="date">
             <input type="hidden" name="time" id="time">
+
+
+
+            <!-- Popup -->
+            <div class="body-form-div-divx3button-h2div--dark hidden">
+                <div class="body-form-div-divx3button-h2div box-shadow ">
+                    <h2 class="body-form-div-divx3button-h2div--h2">Datos del {cliente}</h2> 
+                    <p>Comprueba que esté todo bien antes de crear la cita</p>
+                    <div class="body-form-div-divx3button-h2div-Px6">
+                        <p class="body-form-div-divx3button-h2div-Px6--p__name">- Nombre: {nombre}</p>
+                        <p class="body-form-div-divx3button-h2div-Px6--p__phone">- Teléfono: {teléfono}</p>
+                        <p class="body-form-div-divx3button-h2div-Px6--p__email">- Email: {Email}</p>
+                        <p class="body-form-div-divx3button-h2div-Px6--p__service">- Servicio: {Servicio}</p>
+                        <p class="body-form-div-divx3button-h2div-Px6--p__localization">- Localización: {Localización}</p>
+                        <p class="body-form-div-divx3button-h2div-Px6--p__dates">- Fecha y Hora: El día: {día} a las {hora}</p>
+                    </div>
+                    <p>Me pondré en contacto contigo muy pronto!</p>
+                    <button class="button" type="submit">
+                        ¡Quiero mi reserva!
+                        <img class="img-button-arrow img-arrow-black" src="./img/flecha-derecha-negra.png" alt=""> 
+                        <img class="img-arrow-white img-button-arrow" src="./img/flecha-derecha-blanca.png" alt="">
+                    </button>
+                    <p class="body-form-div-divx3button-h2div--p__faltan-cosas"></p>
+                    <!-- Es un botón para que los usuarios puedan cerrar la pestaña por si necesitan cambiar algo -->
+                    <p class="body-form-div-divx3button-h2div--p">Cerrar pestaña</p>
+                </div>
+            </div>
+            
+
+
+
         </form>
-        
-
-        
-
-
 
         <script type="module" src="./js/main.js"></script>
 

@@ -25,7 +25,7 @@ export function obtenerServicios(){
                     button.type = 'button';
                     button.classList.add("form-div-divx3Button-divx4-labelinput-services--button");
                     button.name = "service-select";
-                    button.value = element.service_id;
+                    button.value = element.service_name;
                     button.id = element.service_id;
                     button.innerHTML = `${element.service_name} ➨ ${element.precio}€`;
                     contenedor.appendChild(button);
@@ -65,11 +65,10 @@ export function selectedService(event){
         inputService.remove();
     }else{
         const input = document.createElement("input");
-
         input.type = "hidden";
         input.name = "service-select[]";
-        input.classList = 'button-pulsado';
-        input.value = button.value;
+        input.classList = 'button-pulsado-service';
+        input.value = button.id;
         input.id = "service";
         input.dataset.service = button.value;
 

@@ -141,8 +141,8 @@ export function selectedHours(e){
 
 
 export function saveInputHourDate(){
-    const inputHourSelect = document.getElementById('date');
-    const inputDateSelect = document.getElementById('time');
+    const inputHourSelect = document.getElementById('time');
+    const inputDateSelect = document.getElementById('date');
 
     inputDateSelect.value = fechaSeleccionada;
     inputHourSelect.value = horaSeleccionada;

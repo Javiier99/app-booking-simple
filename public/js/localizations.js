@@ -12,7 +12,7 @@ export function localization(){
     buttonsPlaceCite.forEach(button =>{
         button.addEventListener("click", ()=>{
 
-            const oldInput = document.querySelector('input[name="place_cite"]');
+            const oldInput = document.querySelector('input[name="place_cite_send"]');
 
             
             inputPlaceCitie.value = button.value;

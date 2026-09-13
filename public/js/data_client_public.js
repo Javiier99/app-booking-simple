@@ -16,6 +16,7 @@ export function dataClientName(){
     if(textoName.length >= 3 && textoName.length <= 15){
         nameOK = true;
         nameError.innerHTML = "<p>¡Es un nombre precioso!</p>";
+        return nameOK;
     }else{
         nameOK = false
         if(textoName.length == 0 || textoName.length <= 3){
@@ -36,6 +37,7 @@ export function dataClientPhone(){
     if(textoPhone.length === 9){
         phoneOK = true;
         phoneError.innerHTML = ``;
+        return phoneOK;
     }else if(textoPhone.length !== 9){
         phoneError.innerHTML = `<p>El teléfono debe de contener 9 números</p>`;
         phoneOK = false;
@@ -60,17 +62,19 @@ export function dataClientEmail(){
 
     if(containArroba === true && containPoint == true){
         emailOK = true;
+        return emailOK;
     }
 }
 
 
 let servicesOK = false;
 export function dataClientService(){
-    let allServiceSelect = document.querySelectorAll('.button-pulsado')
+    let allServiceSelect = document.querySelectorAll('.form-div-divx3Button-divx4-labelinput-services--button__active')
     const serviceError =  document.getElementById('service-error')
 
     if(allServiceSelect.length !== 0){
         servicesOK = true;
+        return servicesOK;
     }else if(allServiceSelect.length === 0){
         servicesOK = false;
     }
@@ -84,6 +88,7 @@ export function dataClientLocalization(){
     let idLocalizationValue = idLocalizacion.value;
     if(idLocalizationValue !== ""){
         localizationOK = true;
+        return localizationOK;
     }
 }
 
@@ -91,12 +96,13 @@ export function dataClientLocalization(){
 
 
 let dateTimeOK = false;
-let dateOK =  false;
-let timeOK =  false;
 
-export function dataClientDateTime(dateOK, timeOK){
+
+export function dataClientDateTime(){
     const date = document.querySelector('#date');
     const time = document.querySelector('#time');
+    let dateOK =  false;
+    let timeOK =  false;
     let dateValue = date.value;
     let timeValue = time.value;
     if(dateValue !== ""){
@@ -108,6 +114,8 @@ export function dataClientDateTime(dateOK, timeOK){
 
     if(dateOK == true && timeOK == true){
         dateTimeOK = true;
+        console.log(dateTimeOK)
+        return dateTimeOK;
     }
 }
 
@@ -119,9 +127,18 @@ export function dataClientDateTime(dateOK, timeOK){
 
 
 export function verificationEnd(){
+    nameOK = dataClientName();
+    phoneOK = dataClientPhone();
+    emailOK = dataClientEmail();
+    servicesOK = dataClientService();
+    localizationOK = dataClientLocalization();
+    dateTimeOK =  dataClientDateTime();
+
     if((nameOK === true) && (phoneOK === true) && (emailOK === true) && (servicesOK === true) && (localizationOK === true) && (dateTimeOK === true)){
         return true;
-    } 
+    }else{
+        return false;
+    }
 }
 
 
