@@ -1,7 +1,6 @@
 <!-- Crearé todo aquí y luego lo llevaré a index.php -->
 
 
-
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -99,7 +98,8 @@
             </div>
             <input type="hidden" name="place_cite_send" id="place_cite" data-place="place_cite">
             <input type="hidden" name="date" id="date">
-            <input type="hidden" name="time" id="time">
+            <input type="hidden" name="timeId" id="time">
+            <input type="hidden" name="timeText" id="timeText">
 
 
 

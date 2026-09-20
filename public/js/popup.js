@@ -35,7 +35,7 @@ export function startPopup(){
 
 
     // * Mostrar todos los datos de los clientes
-
+    const pNameHeader = document.querySelector(".body-form-div-divx3button-h2div--h2");
     const pName = document.querySelector(".body-form-div-divx3button-h2div-Px6--p__name");
     const pPhone = document.querySelector(".body-form-div-divx3button-h2div-Px6--p__phone");
     const pEmail = document.querySelector(".body-form-div-divx3button-h2div-Px6--p__email");
@@ -48,6 +48,7 @@ export function startPopup(){
 
     if(valueNameClient.length >= 3){
         pName.innerHTML = `- Nombre: ${valueNameClient}`;
+        pNameHeader.innerHTML = `Datos de ${valueNameClient}`;
         pName.classList.remove("red");
     }else if(nameClient.value == ""){
         pName.innerHTML = `- Nombre: Falta el nombre`;
@@ -74,7 +75,7 @@ export function startPopup(){
     }
     
     if(valueServiceClient.length !== 0){
-        pService.innerHTML = `- Servicio/os: ${valueServiceClient}`;
+        pService.innerHTML = `- Servicio/os: ${valueServiceClient} `;
         pService.classList.remove("red");
     }else{
         pService.innerHTML = `- Servicio/os: Debes seleccionar al menos 1 servicio`;

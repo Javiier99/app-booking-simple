@@ -114,7 +114,6 @@ export function dataClientDateTime(){
 
     if(dateOK == true && timeOK == true){
         dateTimeOK = true;
-        console.log(dateTimeOK)
         return dateTimeOK;
     }
 }

@@ -117,7 +117,7 @@ buttonSubmit.addEventListener("submit", async (e)=>{
         if(resultado.success){
             window.location.href = "page-thank.php";
         }else{
-            parrafFaltanCosas.innerHTML = "Error al guardar, intentalo en 5min o enviame un whatsApp al: ";
+            parrafFaltanCosas.innerHTML = "Error al guardar, intentalo en 5min o enviame un whatsApp al: +34 633 37 49 25";
         }
     }
     

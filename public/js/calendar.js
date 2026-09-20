@@ -3,7 +3,8 @@
 import "./flatpickr.min.js";
 import "./es.js";
 
-let horaSeleccionada = null;
+let horaSeleccionadaId = null;
+let horaSeleccionadaTexto = null;
 let fechaSeleccionada = null;
 
 
@@ -91,32 +92,40 @@ export function inicializarCalendar(){
         })  
 
         if(saveHoursId.length !== 0){
+            const horasDisponibles = listaHoras[0].filter(hoursWrite => 
+                !saveHoursId.includes(hoursWrite['id_hours_available'])
+            );
 
-            listaHoras[0].forEach(hoursWrite =>{
+            if(horasDisponibles.length === 0){
+                contenedor.innerHTML = `<p class = "texto-horas-no-disponible">No hay horas disponibles, disculpa las molestias</p>`;
+            }else{
+                listaHoras[0].forEach(hoursWrite =>{
 
-                if(!saveHoursId.includes(hoursWrite['id_hours_available'])){
-                    const button = document.createElement('button');
-                    button.type = 'button';
-                    button.classList.add('body-form-div-divx2-h2Div-divHours--button');
-                    button.textContent = hoursWrite.hora;
-                    contenedor.appendChild(button);
-                }
-            })
-
+                
+                    if(!saveHoursId.includes(hoursWrite['id_hours_available'])){
+                        const button = document.createElement('button');
+                        button.type = 'button';
+                        button.classList.add('body-form-div-divx2-h2Div-divHours--button');
+                        button.textContent = hoursWrite.hora;
+                        button.value = hoursWrite.id_hours_available;
+                        contenedor.appendChild(button);
+                    }
+                })
+            }
             
-
-
-
+            
         }else{
+            
             listaHoras[0].forEach(element => {
                 const button = document.createElement('button');
                 button.type = 'button';
                 button.classList.add('body-form-div-divx2-h2Div-divHours--button');
                 button.textContent = element.hora;
+                button.value = element.id_hours_available;
                 contenedor.appendChild(button);
             });
+            
         }
-
 
     }
 
@@ -134,18 +143,22 @@ export function selectedHours(e){
         })
 
         e.target.classList.add("button-select");
-        horaSeleccionada = e.target.textContent
+        horaSeleccionadaId = e.target.value;
+        horaSeleccionadaTexto = e.target.textContent;
     }
 }
 
 
 
 export function saveInputHourDate(){
-    const inputHourSelect = document.getElementById('time');
+    const inputHourSelectId = document.getElementById('time'); 
+    const inputHourSelectText = document.getElementById('timeText'); 
     const inputDateSelect = document.getElementById('date');
 
+    
     inputDateSelect.value = fechaSeleccionada;
-    inputHourSelect.value = horaSeleccionada;
+    inputHourSelectId.value = horaSeleccionadaId;
+    inputHourSelectText.value = horaSeleccionadaTexto;
 
 
 }

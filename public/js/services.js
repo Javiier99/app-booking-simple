@@ -27,6 +27,7 @@ export function obtenerServicios(){
                     button.name = "service-select";
                     button.value = element.service_name;
                     button.id = element.service_id;
+                    button.precio = element.precio;
                     button.innerHTML = `${element.service_name} ➨ ${element.precio}€`;
                     contenedor.appendChild(button);
                     
@@ -60,19 +61,33 @@ export function selectedService(event){
 
     
     const inputService = document.querySelector(`input[name="service-select[]"][data-service="${button.value}"]`);
+    const inputServicePrecio = document.querySelector(`#price`);
 
     if(inputService){
         inputService.remove();
+        inputServicePrecio.remove();
     }else{
         const input = document.createElement("input");
         input.type = "hidden";
         input.name = "service-select[]";
-        input.classList = 'button-pulsado-service';
-        input.value = button.id;
+        input.value = button.value;
+        input.classList.add("button-pulsado-service");
         input.id = "service";
         input.dataset.service = button.value;
 
         document.querySelector("form").appendChild(input);
+
+
+
+        const inputPrecio = document.createElement("input");
+        inputPrecio.type = "hidden";
+        inputPrecio.name = "price-service-select[]";
+        inputPrecio.value = button.precio;
+        inputPrecio.id = "price";
+        inputPrecio.dataset.service = button.value;
+
+        document.querySelector("form").appendChild(inputPrecio);
+
     }
 
 }
