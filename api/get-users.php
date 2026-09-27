@@ -1,1 +1,0 @@
-<!-- Aquí irá la logica para obtener la tabla todos los usuarios registrados o mejor dicho la logica que permitirá entrar a los admin a su sitio correspondiente -->

@@ -1,1 +1,0 @@
-<!-- Logica para obtener todos los clientes de la bbdd -->
