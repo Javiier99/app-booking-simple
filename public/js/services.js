@@ -61,11 +61,13 @@ export function selectedService(event){
 
     
     const inputService = document.querySelector(`input[name="service-select[]"][data-service="${button.value}"]`);
-    const inputServicePrecio = document.querySelector(`#price`);
+    const inputServicePrecio = document.querySelector(`input[name="price-service-select[]"][value="${button.precio}"]`);
+    const inputServiceId = document.querySelector(`input[name="id-service-select[]"][value="${button.id}"]`);
 
     if(inputService){
         inputService.remove();
         inputServicePrecio.remove();
+        inputServiceId.remove();
     }else{
         const input = document.createElement("input");
         input.type = "hidden";
@@ -88,6 +90,17 @@ export function selectedService(event){
         inputPrecio.dataset.service = button.value;
 
         document.querySelector("form").appendChild(inputPrecio);
+
+
+        const inputServiceId = document.createElement("input");
+        inputServiceId.type = "hidden";
+        inputServiceId.name = "id-service-select[]";
+        inputServiceId.value = button.id;
+        inputServiceId.classList.add("button-pulsado-id");
+        inputServiceId.id = "idService";
+        inputServiceId.dataset.service = button.value;
+
+        document.querySelector("form").appendChild(inputServiceId);
 
     }
 

@@ -68,7 +68,7 @@
                 <div class="body-form-div-divx3button-labelDiv">
                     <label class="body-form-div-divx3button-labelDiv--label" for="localization">Localización</label>
                     <div class="body-form-div-divx3button-labelDiv-divx2">
-                        <button class="body-form-div-divx3button-labelDiv-divx2-divx2" name="place_cite" value="Negocio" type="button">
+                        <button class="body-form-div-divx3button-labelDiv-divx2-divx2" name="place_cite" value="Calle Javier Hispano Viva España" type="button">
                             <div class="body-form-div-divx3button-labelDiv-divx2-divx2-img">
                                 <img class="body-form-div-divx3button-labelDiv-divx2-divx2-img--img" src="./img/enterprise-white.png" alt="">
                             </div>
@@ -77,7 +77,7 @@
                                 <p>Localización o calle</p>
                             </div>
                         </button>
-                        <button class="body-form-div-divx3button-labelDiv-divx2-divx2" name="place_cite" value="En tu casa" type="button">
+                        <!-- <button class="body-form-div-divx3button-labelDiv-divx2-divx2" name="place_cite" value="En tu casa" type="button">
                             <div class="body-form-div-divx3button-labelDiv-divx2-divx2-img">
                                 <img class="body-form-div-divx3button-labelDiv-divx2-divx2-img--img " src="./img/house-white.png" alt="">
                             </div>
@@ -85,7 +85,7 @@
                                 <h3>En mi casa</h3>
                                 <p>Servicio a domicilio</p>
                             </div>
-                        </button>
+                        </button> -->
                     </div>
                     
                 </div>

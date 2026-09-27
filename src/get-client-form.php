@@ -1,4 +1,4 @@
-Aquí irá la logica para obtener los clientes de los formularios
+<!-- Aquí irá la logica para obtener los clientes de los formularios -->
 
 
 <?php
@@ -15,6 +15,7 @@ try {
         $telefono = $_POST['phone'] ?? '';
         $email = $_POST['email'] ?? '';
         $servicios = $_POST['service-select'] ?? '';
+        $serviceID = $_POST['id-service-select'] ?? '';
         $priceServiceTotal = $_POST['precio-service'] ?? '';
         $fecha = $_POST['date'] ?? '';
         $horaId = $_POST['timeId'] ?? '';
@@ -28,8 +29,6 @@ try {
                 $fechaModificada = $dateObject->format('Y-m-d'); // Se convierte a "2026-09-24"
             }
         }
-
-
 
 
 
@@ -49,29 +48,47 @@ try {
             ':price_total' => $priceServiceTotal,
         ]);
 
-
-
-
-
-
         // Guardar todos los servicios
-        // Extraer el id  guardado del cliente y luego guardarlo consecutivamente respecto a todos los servicios que ha escogido
+        $bookingId = $pdo->lastInsertId(); // Guardamos el id del cliente
 
+        $insertService = $pdo->prepare("INSERT INTO services_client_booking (booking_id, service_id) 
+                                        VALUES (:booking_id, :service_id)");
+        
+        foreach($serviceID as $serviciosIDIndividual){
+            $insertService ->execute([
+                ':booking_id' => $bookingId,
+                ':service_id' => $serviciosIDIndividual
+
+            ]);
+        }
 
 
 
         // Enviar por correo todo los datos de la cita del cliente con python
 
+        if(is_array($servicios)){ // En caso de ser un array lo debo de pasar a texto
+            $serviciosTexto = implode(', ', $servicios);
+        }else{
+            $serviciosTexto = (string)$servicios;
+        }
+
+        $nombreEmail = escapeshellarg($nombre);
+        $emailEmail = escapeshellarg($email);
+        $horaEmail = escapeshellarg($horaText);
+        $fechaEmail = escapeshellarg($fechaModificada);
+        $priceTotalEmail = escapeshellarg($priceServiceTotal);
+        $lugarEmail = escapeshellarg($lugar);
+        $serviceEmail = escapeshellarg($serviciosTexto);
 
 
+        $python = __DIR__ . '/../.venv/Scripts/python.exe';
+        $scripts = __DIR__ . '/../backend/automatisation/send_first_email.py';
+
+        $comando = "$python $scripts $nombreEmail $emailEmail $horaEmail $fechaEmail $priceTotalEmail $lugarEmail $serviceEmail";
+        pclose(popen("start /B " . $comando, "r"));
 
 
-
-
-
-
-
-
+        // Guardar todos los datos para la página de gracias
 
         echo json_encode(['success' => true]);
         $_SESSION['name'] = $nombre;
