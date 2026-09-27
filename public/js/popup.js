@@ -16,7 +16,13 @@ export function startPopup(){
     const emailClient = document.getElementById("email");
 
     const serviceClient = document.querySelectorAll('.button-pulsado-service');
-    const valorServiceClient = Array.from(serviceClient).map(input=> input.dataset.service); // Es una lista
+    const valorTextoServiceClient = Array.from(serviceClient).map(input=> input.dataset.service); // Es una lista
+
+    const precioServiceClient =  document.querySelectorAll(".button-pulsado-precio");
+    const valorPrecioServiceClient = Array.from(precioServiceClient).map(input=> input.value);
+
+    const valorPrecioServiceClientInput = document.querySelector(".body-form-div-divx3button-h2div-inputPrice");
+    
 
     const placeClient = document.getElementById('place_cite');
     
@@ -28,7 +34,16 @@ export function startPopup(){
     const valueNameClient = nameClient.value;
     const valuePhoneClient = phoneClient.value;
     const valueEmailClient = emailClient.value;
-    const valueServiceClient = valorServiceClient;
+    const valueServiceClient = valorTextoServiceClient;
+
+    let valorService = 0;
+    for(let i = 0; i < valorPrecioServiceClient.length; i++){
+        valorService = valorService + Math.floor(valorPrecioServiceClient[i]);
+    }
+    const valuePriceServiceCLient = valorService;
+    valorPrecioServiceClientInput.value = valorService;
+    const valuePriceServiceCLientPrice = valorPrecioServiceClientInput.value;
+
     const valuePlaceClient = placeClient.value;
     const valuehoursClient = hoursClient.value;
     const valuetimeClient = timeClient.value;
@@ -40,6 +55,7 @@ export function startPopup(){
     const pPhone = document.querySelector(".body-form-div-divx3button-h2div-Px6--p__phone");
     const pEmail = document.querySelector(".body-form-div-divx3button-h2div-Px6--p__email");
     const pService = document.querySelector(".body-form-div-divx3button-h2div-Px6--p__service");
+    const pValueService = document.querySelector(".body-form-div-divx3button-h2div-price");
     const pLocalization = document.querySelector(".body-form-div-divx3button-h2div-Px6--p__localization");
     const pDates = document.querySelector(".body-form-div-divx3button-h2div-Px6--p__dates");
 
@@ -52,9 +68,13 @@ export function startPopup(){
         pName.classList.remove("red");
     }else if(nameClient.value == ""){
         pName.innerHTML = `- Nombre: Falta el nombre`;
+        pNameHeader.innerHTML = `- Nombre: Falta el nombre`;
+        pNameHeader.classList.add("red");
         pName.classList.add("red");
     }else if(nameClient.value.length <= 3){
         pName.innerHTML = `- Nombre: El nombre debe de ser como mínimo de 3 caracteres`;
+        pNameHeader.innerHTML = `- Nombre: error, debe tener más de tres caracteres`;
+        pNameHeader.classList.add("red");
         pName.classList.add("red");
     }
 
@@ -76,13 +96,16 @@ export function startPopup(){
     
     if(valueServiceClient.length !== 0){
         pService.innerHTML = `- Servicio/os: ${valueServiceClient} `;
+        pValueService.innerHTML = `El precio del servicio completo escogido/s es de: ${valuePriceServiceCLient}€`;
+        pValueService.value = valuePriceServiceCLient;
         pService.classList.remove("red");
     }else{
         pService.innerHTML = `- Servicio/os: Debes seleccionar al menos 1 servicio`;
+        pValueService.innerHTML = ``;
+        pValueService.value = 0;
         pService.classList.add("red");
     }
-    
-    
+
     if(valuePlaceClient.length !== 0){
         pLocalization.innerHTML = `- Localización: ${valuePlaceClient}`;
         pLocalization.classList.remove("red");

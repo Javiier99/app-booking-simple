@@ -20,16 +20,11 @@
     $horaText = $_SESSION['horaText'];
     $lugar = $_SESSION['localizacion'];
     $priceTotal = $_SESSION['price_total'];
+    
 
-    // Aquí se dará la opción a enviar la cita por correo electrónico, si el cliente lo pulsa le llegará un recordatorio de la cita, esto se hará con python
 
 
 ?>
-
-
-
-
-
 
 
 
@@ -62,7 +57,7 @@
             </div>
             <div>
                 <img src="../../img/clock.png" alt="">
-                <p>La hora es a las <?php echo $horaText;?></p>
+                <p>La hora es a las <?php echo $horaText; ?></p>
                 <p></p>
             </div>
             <div>
@@ -74,7 +69,7 @@
                 <img src="../../img/heart.png" alt="">
                 <p>Servicios</p>
                 <p>Tus servicios<?php foreach($servicios as $servicio){echo ", {$servicio}";}?></p>
-                <p>El total sería de: <?php echo $priceTotal;?></p>
+                <p>El total sería de: <?php echo $priceTotal;?>€</p>
             </div>
         </div>
 

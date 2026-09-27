@@ -83,6 +83,7 @@ export function selectedService(event){
         inputPrecio.type = "hidden";
         inputPrecio.name = "price-service-select[]";
         inputPrecio.value = button.precio;
+        inputPrecio.classList.add("button-pulsado-precio");
         inputPrecio.id = "price";
         inputPrecio.dataset.service = button.value;
 

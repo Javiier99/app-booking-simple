@@ -199,7 +199,7 @@ body{
 
 
 
-/* Datos del cliente */
+/* Datos del cliente -> Popup */
 
 .body-form-div-divx3button-h2div--dark{
     position: fixed;
@@ -264,4 +264,8 @@ body{
 .body-form-div-divx3button-h2div--p__faltan-cosas{
     font-weight: 900;
     color: red;
+}
+
+.body-form-div-divx3button-h2div-price{
+    font-weight: bold;
 }

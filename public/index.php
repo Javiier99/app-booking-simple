@@ -116,6 +116,8 @@
                         <p class="body-form-div-divx3button-h2div-Px6--p__localization">- Localización: {Localización}</p>
                         <p class="body-form-div-divx3button-h2div-Px6--p__dates">- Fecha y Hora: El día: {día} a las {hora}</p>
                     </div>
+                    <p class="body-form-div-divx3button-h2div-price">El precio del servicio completo escogido/s es de: {Valor del servicio}€</p>
+                    <input type="hidden" name="precio-service" value="0" class="body-form-div-divx3button-h2div-inputPrice">
                     <p>Me pondré en contacto contigo muy pronto!</p>
                     <button class="button" type="submit">
                         ¡Quiero mi reserva!
