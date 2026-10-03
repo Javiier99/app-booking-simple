@@ -15,16 +15,14 @@ body{
     width: auto;
     min-height: 100vh;
     
-    background: linear-gradient(
-        var(--white) 0%,
-        var(--light-green-background) 100%
-    );
+    background: linear-gradient(var(--white) 0%,var(--light-green-background) 100%);
     background-size: 200% 400%;
     background-attachment: fixed;
     animation: backgound-surf 12s ease-in-out infinite; 
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 /* Todos los estilos globales */

@@ -5,7 +5,7 @@ from email.message import EmailMessage
 from pathlib import Path
 from dotenv import load_dotenv
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 RUTA_ENV = BASE_DIR / '.env'
 
 load_dotenv(dotenv_path=RUTA_ENV)
@@ -71,6 +71,19 @@ cuerpo_html = f"""
 
 msg.set_content(f"Hola {nombre}, tu reserva para el {fecha} a las {hora} en {lugar} por un total de {precio_total}€ ha sido confirmada.") #Lo usamos en caso de que el cliente lo tenga capado los envios de correo por html
 msg.add_alternative(cuerpo_html, subtype="html") # En caso de que está todo bien, usamos este tipo de envío
+
+
+# Pruebas para comprobar si el correo se envia correctamente y cual es el error
+# try:
+#     with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:
+#         server.starttls()
+#         server.login(REMITENTE_EMAIL, REMITENTE_PASSWORD)
+#         server.send_message(msg)
+#     print("Correo enviado con éxito")
+# except Exception as e:
+#     import traceback
+#     print("FALLO EXACTO:")
+#     traceback.print_exc()
 
 # 5. Enviar el correo
 try:

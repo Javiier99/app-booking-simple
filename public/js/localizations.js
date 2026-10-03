@@ -1,6 +1,3 @@
-// * Hacer lo mismo que en service pero en localización, debo de colocar el name, los distintos values y que solo se pueda seleccionar 1
-
-
 
 
 

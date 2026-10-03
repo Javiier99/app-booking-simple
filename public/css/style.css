@@ -1,11 +1,5 @@
 /* Todos los estilos que le daremos a la página */
 
-body{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .body-div-h1h2p{
     padding: 1rem 0px 3rem 0px;
@@ -269,3 +263,152 @@ body{
 .body-form-div-divx3button-h2div-price{
     font-weight: bold;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* * Página de gracias */
+
+
+.page-thank-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.page-thank-container-section{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--white);
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0px;
+}
+
+
+
+.page-thank-container-section-div1{
+    background-color: var(--green-selection-button);
+    border-radius: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+.page-thank-container-section-div1-img{
+    width: 4rem;
+}
+
+.page-thank-container-section-p1{
+    font-weight: bold;
+    color: var(--green-selection-button);
+}
+
+
+.page-thank-container-section-h1, .page-thank-container-section-p2{
+    text-align: center;
+    width: 80%;
+    padding-bottom: 2rem;
+}
+
+
+.page-thank-container-section-div2{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: var(--light-green);
+    gap: 2rem;
+    width: 100%;
+    padding: 2rem 0px;
+    margin-bottom: 2rem;
+}
+
+.page-thank-container-section-div2-div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.page-thank-container-section-div2-div-div{
+    background-color: var(--green-selection-button);
+    border-radius: 100%;
+    padding: 2rem;
+}
+
+.page-thank-container-section-div2-div-div img, .page-thank-container-section-div2-div-div-localization img{
+    width: 2rem;
+}
+
+.page-thank-container-section-div2-div-div-localization{
+    background-color: var(--green-selection-button);
+    border-radius: 100%;
+    padding: 1.5rem 2rem 1.5rem 2rem;
+}
+
+.page-thank-container-section-div2-div-div-p{
+    font-weight: bold;
+    width: 80%;
+    text-align: center;
+}
+
+.page-thank-container-section-div2-div-div-p-priceService{
+    font-weight: bold;
+}
+
+
+
+
+.page-thank-container-section-div3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.page-thank-container-section-div3-img{
+    width: 2rem;
+}
+
+.page-thank-container-section-p3{
+    text-align: center;
+}
+
+
+.page-thank-container-section-p3-span{
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

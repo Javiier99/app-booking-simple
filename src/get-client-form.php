@@ -79,6 +79,7 @@ try {
         $priceTotalEmail = escapeshellarg($priceServiceTotal);
         $lugarEmail = escapeshellarg($lugar);
         $serviceEmail = escapeshellarg($serviciosTexto);
+        $phone = escapeshellarg($telefono);
 
 
         $python = __DIR__ . '/../.venv/Scripts/python.exe';
@@ -86,6 +87,11 @@ try {
 
         $comando = "$python $scripts $nombreEmail $emailEmail $horaEmail $fechaEmail $priceTotalEmail $lugarEmail $serviceEmail";
         pclose(popen("start /B " . $comando, "r"));
+
+        // Enviar un 2º correo a la empresa
+        $scriptsEnterprise = __DIR__ . '/../backend/automatisation/send_email_enterprise.py';
+        $comandoEnterprise = "$python $scriptsEnterprise $nombreEmail $emailEmail $horaEmail $fechaEmail $priceTotalEmail $lugarEmail $serviceEmail $telefono";
+        pclose(popen("start /B " . $comandoEnterprise, "r"));
 
 
         // Guardar todos los datos para la página de gracias
