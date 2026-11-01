@@ -7,7 +7,6 @@
     require_once __DIR__ . '/../../backend/automatisation/verifySesion.php';
     verifySession();
 
-
     $error = $_SESSION['error'] ?? "";
     unset($_SESSION['error']);
 

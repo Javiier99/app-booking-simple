@@ -8,7 +8,7 @@
     function verifySession(){
         // Calculo para cerrar sesión y que vuelva a poner de nuevo el usuario y contraseña será de 7 días por el momento
         $sessionNowSession = new DateTime();
-        $sessionDateStart = $_SESSION['date-start'];
+        $sessionDateStart = $_SESSION['date-start'] ?? 0;
 
         if($sessionDateStart == 0 || $sessionDateStart == null){
             $_SESSION['date-start'] = date('Y-m-d H:i:s');
@@ -40,20 +40,4 @@
 
 
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
