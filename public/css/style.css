@@ -440,3 +440,54 @@
     gap: 0.5rem;
 }
 
+
+
+
+/* Aquí va el dashboard de todo el contenido */
+
+.dashboard-body{
+    justify-content: start !important;
+    align-items: start !important;
+}
+
+.dashboard-section{
+    width: 98%;
+    border: var(--green-dark) solid 0.2rem;
+    border-radius: 2rem;
+    padding: 2rem;
+}
+
+.dashboard-section-div{
+    margin-top: 1rem;
+}
+
+.dashboard-section-div-table{
+    width: 100%;
+}
+
+.dashboard-section-div-table-td, .dashboard-section-div-table-tbody-tr{
+    font-family: sans-serif;
+    font-size: 2rem;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+.dashboard-section-div-table-td--button{
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

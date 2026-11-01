@@ -8,7 +8,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Sitio de reservas</title>
         <link rel="stylesheet" href="./css/main.css">
-        <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" /> -->
     </head>
     <body>
         <div class="body-div-h1h2p">

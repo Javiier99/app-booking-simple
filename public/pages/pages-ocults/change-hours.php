@@ -1,1 +1,0 @@
-<!-- Esta es para poder cambiar las horas disponibles -->

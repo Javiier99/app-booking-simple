@@ -1,0 +1,27 @@
+
+
+
+
+
+
+// Lo usaremos para crear un formulario y actualizar las citas, basicamente necesitaría un popup con el formulario a actualizar y ahi dentro deberán de estár todos los datos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
