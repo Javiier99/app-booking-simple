@@ -2,9 +2,15 @@
 
 <?php
 
-
     session_start();
+    
+    require_once __DIR__ . '/../../backend/automatisation/verifySesion.php';
+    verifySession();
+
+
     $error = $_SESSION['error'] ?? "";
+    unset($_SESSION['error']);
+
 
 
 ?>
@@ -52,8 +58,6 @@
         <?php }?>
 
     </main>
-
-
 
     <script src="../js/stars-sesion/main-stars-sesion.js"></script>
 </body>

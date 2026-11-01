@@ -3,7 +3,7 @@
 
 
 <?php
-
+    
     $errores = [];
     try{
         session_start();
@@ -13,7 +13,7 @@
         require_once __DIR__ . "/../../config/database.php";
 
         if($_SERVER['REQUEST_METHOD'] === "POST"){
-            $emailUser = $_POST['email'] ? : "";
+            $emailUser = $_POST['email'];
             $passwordUser = $_POST['password'];
 
             // Obtener los datos de la BBDD
@@ -22,24 +22,24 @@
             $resultados = $stmt->fetch(PDO::FETCH_ASSOC);
 
 
-            if($resultados === true){
+            if($resultados['admin_email'] === $emailUser){
                 $name = $resultados['admin_name'];
                 $email = $resultados['admin_email'];
                 $password = $resultados['admin_password'];
                 $userOk = false;
                 $paswordOk = false;
-                
+                $_SESSION['start_session_automatic'] = false;
 
                 if($email == $emailUser){
                     $userOk = true;
                 }else{
-                    array_push($errores, "El email no es el correcto");
+                    array_push($errores, "El usuario o la contraseña no es correcta");
                 }
 
                 if($passwordUser == $password){
                     $paswordOk = true;
                 }else{
-                    array_push($errores, "La contraseña no es la correcta");
+                    array_push($errores, "El usuario o la contraseña no es correcta");
                 }
 
 
@@ -47,10 +47,12 @@
                     // Entramos y redireccionamos  con $_SESSION
                     $_SESSION['name'] = $name;
                     $_SESSION['email'] = $email;
-                    header("Location: ../../../../public/pages/pages-ocults/index-users.php");
+                    $_SESSION['start_session_automatic'] = true;
+                    header("Location: /app-booking-simple/public/pages/pages-ocults/index-users.php");
+                    exit();
                 }else{
                     $_SESSION['error'] = $errores;
-                    header("Location: ../../../../public/pages/start-sesion.php");
+                    header("Location: /app-booking-simple/public/pages/start-sesion.php");
                     exit();
                 }
 
@@ -58,9 +60,9 @@
 
             }else{
 
-                array_push($errores, "Error, no existe ese email");
+                array_push($errores, "Error, no existe esa cuenta");
                 $_SESSION['error'] = $errores;
-                header("Location: ../../../../public/pages/start-sesion.php");
+                header("Location: /app-booking-simple/public/pages/start-sesion.php");
                 exit();
             }   
 
@@ -70,7 +72,7 @@
 
         array_push($errores, "Error, del sistema vuelvelo a intentar");
         $_SESSION['error'] = $errores;
-        header("Location: ../../../../public/pages/pages-visible/page-thank.php");
+        header("Location: /app-booking-simple/public/pages/start-sesion.php");
         exit();
         
     }
