@@ -26,7 +26,7 @@ try {
         if (!empty($fecha)) {
             $dateObject = DateTime::createFromFormat('d-m-Y', $fecha);
             if ($dateObject) {
-                $fechaModificada = $dateObject->format('Y-m-d'); // Se convierte a "2026-09-24"
+                $fechaModificada = $dateObject->format('Y-m-d');
             }
         }
 
@@ -64,9 +64,9 @@ try {
 
 
 
-        // Enviar por correo todo los datos de la cita del cliente con python
 
-        if(is_array($servicios)){ // En caso de ser un array lo debo de pasar a texto
+
+        if(is_array($servicios)){ 
             $serviciosTexto = implode(', ', $servicios);
         }else{
             $serviciosTexto = (string)$servicios;
@@ -83,18 +83,17 @@ try {
 
 
         $python = __DIR__ . '/../.venv/Scripts/python.exe';
-        $scripts = __DIR__ . '/../backend/automatisation/send_first_email.py';
+        $scripts = __DIR__ . '/../backend/automating/send_first_email.py';
 
         $comando = "$python $scripts $nombreEmail $emailEmail $horaEmail $fechaEmail $priceTotalEmail $lugarEmail $serviceEmail";
         pclose(popen("start /B " . $comando, "r"));
 
-        // Enviar un 2º correo a la empresa
-        $scriptsEnterprise = __DIR__ . '/../backend/automatisation/send_email_enterprise.py';
-        $comandoEnterprise = "$python $scriptsEnterprise $nombreEmail $emailEmail $horaEmail $fechaEmail $priceTotalEmail $lugarEmail $serviceEmail $telefono";
+
+        $scriptsEnterprise = __DIR__ . '/../backend/automating/send_email_enterprise.py';
+        $comandoEnterprise = "$python $scriptsEnterprise $nombreEmail $emailEmail $horaEmail $fechaEmail $priceTotalEmail $lugarEmail $serviceEmail $phone";
         pclose(popen("start /B " . $comandoEnterprise, "r"));
 
 
-        // Guardar todos los datos para la página de gracias
 
         echo json_encode(['success' => true]);
         $_SESSION['name'] = $nombre;
