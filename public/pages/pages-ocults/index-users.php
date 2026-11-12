@@ -3,8 +3,7 @@
 <?php 
 
     session_start();
-    // require_once __DIR__ . '../../../../backend/automatisation/verify-session-users.php';
-    require_once dirname(__DIR__, 3) . '/backend/automatisation/verify-session-users.php';
+    require_once dirname(__DIR__, 3) . '/backend/automating/verify-session-users.php';
     verifySessionUsers();
 
     require_once dirname(__DIR__, 3) . '/config/database.php';

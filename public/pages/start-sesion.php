@@ -4,7 +4,7 @@
 
     session_start();
     
-    require_once __DIR__ . '/../../backend/automatisation/verifySesion.php';
+    require_once __DIR__ . '/../../backend/automating/verifySesion.php';
     verifySession();
 
     $error = $_SESSION['error'] ?? "";
@@ -30,7 +30,7 @@
     
 
     <main class="startSesion-main">
-        <form action="../../backend/starts-sesion/starts-sesion.php" method="POST" class="startSesion-main-form">
+        <form action="../../backend/start-sesion/start-sesion.php" method="POST" class="startSesion-main-form">
             <div class="startSesion-main-form-div1">
                 <label for="email" class="startSesion-main-form-div1--label">Email</label>
                 <input type="email" class="startSesion-main-form-div1--input" name="email" placeholder="Tu email" id="email">

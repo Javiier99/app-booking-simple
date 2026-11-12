@@ -1,10 +1,11 @@
 <?php
 
+    require_once __DIR__ . '/env.php';
 
-    $host = "localhost";
-    $usuario = "root"; // usuario por defecto de laragon
-    $password = ""; // Contraseña por defecto de laragon (vacia)
-    $baseData = "booking"; // El nombre exacto de la BBDD
+    $host = env('DB_HOST', 'localhost');
+    $usuario = env('DB_USER', 'root'); 
+    $password = env('DB_PASS', ''); 
+    $baseData = env('DB_NAME', 'booking'); 
 
 
     try{

@@ -10,7 +10,7 @@ RUTA_ENV = BASE_DIR / '.env'
 
 load_dotenv(dotenv_path=RUTA_ENV)
 
-# 1. Comprobar que hemos recibido los 7 argumentos (+1 que es el propio script = 8)
+
 if len(sys.argv) < 8:
     print("Error: Faltan argumentos requeridos.")
     sys.exit(1)
@@ -24,20 +24,20 @@ precio_total = sys.argv[5]
 lugar = sys.argv[6]
 servicios = sys.argv[7]
 
-# 3. Datos del servidor SMTP
-#* Todos estos datos se guardarán en el archivo .env
+
+
 SMTP_SERVER = os.getenv("SMTP_SERVER", "smtp.gmail.com")
 SMTP_PORT = int(os.getenv("SMTP_PORT", 587))
 REMITENTE_EMAIL = os.getenv("REMITENTE_EMAIL")
-REMITENTE_PASSWORD = os.getenv("REMITENTE_PASSWORD")  # Tu Contraseña de Aplicación
+REMITENTE_PASSWORD = os.getenv("REMITENTE_PASSWORD") 
 
-# 4. Construir la estructura del mensaje
+
 msg = EmailMessage()
 msg["Subject"] = f"Confirmación de Reserva - (Nombre de la empresa) {fecha}"
 msg["From"] = REMITENTE_EMAIL
 msg["To"] = email_destino
 
-# Plantilla HTML con los datos de la reserva
+
 cuerpo_html = f"""
 <!DOCTYPE html>
 <html>
@@ -69,8 +69,8 @@ cuerpo_html = f"""
 </html>
 """
 
-msg.set_content(f"Hola {nombre}, tu reserva para el {fecha} a las {hora} en {lugar} por un total de {precio_total}€ ha sido confirmada.") #Lo usamos en caso de que el cliente lo tenga capado los envios de correo por html
-msg.add_alternative(cuerpo_html, subtype="html") # En caso de que está todo bien, usamos este tipo de envío
+msg.set_content(f"Hola {nombre}, tu reserva para el {fecha} a las {hora} en {lugar} por un total de {precio_total}€ ha sido confirmada.") 
+msg.add_alternative(cuerpo_html, subtype="html")
 
 
 # Pruebas para comprobar si el correo se envia correctamente y cual es el error
